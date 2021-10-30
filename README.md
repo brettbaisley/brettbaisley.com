@@ -4,6 +4,8 @@ My Personal Website
 
 ## Clone Github Repo
 
+To start a new repo on your desktop, run these steps:
+
 1. Open Terminal
 
 2. Run the following commands:
@@ -16,12 +18,30 @@ git clone <GITHUB_URL>
 
 ## Commit All Changes
 
-1. `git add .`
+Once desired changes are made, run these steps: 
 
-2. `git commit -m "<COMMIT_MESSAGE>"`
+```
+git add .
 
-3. `git push`
+git commit -m "<COMMIT_MESSAGE>"
+```
 
 ## Pushing Changes to Github
 
-1. 
+When ready to push changes to Github, run these steps:
+
+```
+git push
+```
+
+## Initialize Firebase
+
+```
+cd /Users/brett/code/websites/<REPO>
+
+firebase init
+```
+
+Select this option: `Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys`
+
+and then follow the prompts to set up your application.
