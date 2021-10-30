@@ -52,3 +52,14 @@ When finished,
 4. Click the `Sync Changes` button to push the changes up to Github
 
 
+## Create a Pull Request
+Click the Github icon and create a pull request. You want to pull the changes in the new branch into the `main` branch.
+
+This action will create a new preview link on Firebase. You can use it to test the changes on Firebase, before commiting them to the main branch.
+
+## Merge Pull Request
+Review the pull request from previous step. Test the website in various browsers to ensure it is working as expected.
+
+Once ready, accept and merge the pull request. This will trigger teh Github Action to update the live channel on Firebase, making the changes public.
+
+When asked, delete the branch, so you don't have unused branches lying around.
