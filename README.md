@@ -49,23 +49,6 @@ When finished,
 
 3. Enter a commit message, and then click the checkmark to commit
 
-4. 
+4. Click the `Sync Changes` button to push the changes up to Github
 
-
-
-Make all Once desired changes are made, run these steps: 
-
-```
-git add .
-
-git commit -m "<COMMIT_MESSAGE>"
-```
-
-
-## Pushing Changes to Github
-When ready to push changes to Github, run these steps:
-
-```
-git push
-```
 
