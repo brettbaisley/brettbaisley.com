@@ -2,6 +2,9 @@
 :root {
     --header-min-height-mobile: 48px;
     --header-min-height-desktop: 90px;
+
+    --primary-text-color: rgb(52, 72, 84);
+    --secondary-text-color: rgb(103, 120, 138);
 }
 
 
@@ -51,14 +54,24 @@ header h1 {
 section {
     padding: 1rem;
 }
-.full-screen {
+
+.masthead {
     align-items: center;
-    background-color: aquamarine;
+    background: rgb(242,242,246);
+    background: radial-gradient(circle, rgba(242,242,246,1) 0%, rgba(210,225,241,1) 100%);
+    color: var(--secondary-text-color);
     display: flex;
     flex-direction: column;
     height: calc(100vh - var(--header-min-height-mobile));
     justify-content: center;
 }
+
+.masthead h1 {
+    color: var(--primary-text-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.3125rem;
+}
+
 
 
 /* Media Queries */
