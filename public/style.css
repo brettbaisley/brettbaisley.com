@@ -1,3 +1,10 @@
+/* CSS Variables */
+:root {
+    --header-min-height-mobile: 48px;
+    --header-min-height-desktop: 90px;
+}
+
+
 /* Minimal CSS Reset */
 html {
     box-sizing: border-box;
@@ -11,6 +18,7 @@ html {
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: normal;
 }
 
@@ -19,8 +27,8 @@ ol, ul {
 }
 
 img {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
 }
 
 /* Header Styles */
@@ -28,9 +36,45 @@ header {
     align-items: center;
     border-bottom: 1px solid rgba(22, 22, 22, .16);
     display: flex;
-    font-size: 1.125rem;
     justify-content: space-between;
     line-height: 1.6875;
-    min-height: 90px;
-    padding: 0 4rem;
+    min-height: 48px;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 1.125rem;
+    text-align: center;
+    width: 100%;
+}
+
+section {
+    padding: 1rem;
+}
+.full-screen {
+    align-items: center;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-min-height-mobile));
+    justify-content: center;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 60em) {
+    header {
+        min-height: 90px;
+        padding: 0 4rem;
+    }
+
+    header h1 {
+        font-size: 1.125rem;
+        width: auto;
+    }
+
+    .full-screen {
+        height: calc(100vh - var(--header-min-height-desktop));
+    }
 }
