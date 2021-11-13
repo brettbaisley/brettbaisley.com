@@ -8,6 +8,11 @@
 
     --primary-link-color: rgb(40, 135, 225);
     --primary-link-hover-color: rgb(32, 110, 185);
+
+    --primary-footer-bg-color: rgb(28, 28, 28);
+    --primary-footer-text-color: rgb(175, 175, 175);
+    --primary-footer-link-color: var(--primary-footer-text-color);
+    --primary-footer-hover-color: rgb(137, 137, 137);
 }
 
 
@@ -68,6 +73,14 @@ ul {
     list-style: none;
 }
 
+
+/* Set padding on each section, for consistency */
+body > * {
+    padding: 1rem;
+}
+
+
+
 /* Header Styles */
 header {
     align-items: center;
@@ -86,14 +99,11 @@ header h1 {
     width: 100%;
 }
 
-section {
-    padding: 1rem;
-}
+
 
 .masthead {
-    align-items: center;
-    background: rgb(242,242,246);
-    background: radial-gradient(circle, rgba(242,242,246,1) 0%, rgba(210,225,241,1) 100%);
+    background: rgb(240,246,255);
+    background: linear-gradient(45deg, rgba(240,246,255,1) 0%, rgba(219,234,255,1) 100%);
     color: var(--secondary-text-color);
     display: flex;
     flex-direction: column;
@@ -102,16 +112,64 @@ section {
 }
 
 .masthead h1 {
+    text-align: center;
     color: var(--primary-text-color);
     font-size: 2.5rem;
     margin-bottom: 1.3125rem;
 }
 
+.down-icon {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.look-down {
+    animation-name: look-down;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes look-down {
+    0%   { transform: translateY(0); }
+    10%  { transform: translateY(15px); }
+    20%  { transform: translateY(0); }
+    30%  { transform: translateY(15px); }
+    40%  { transform: translateY(0); }
+}
+
+
+.social {
+    text-align: center;
+}
 .social li {
     display: inline-block;
     font-size: 2rem;
 }
 
+
+section > h1 {
+    font-size: 2rem;
+    margin-bottom: 1.3125rem;
+}
+
+
+footer {
+    align-items: flex-end;
+    background-color: var(--primary-footer-bg-color);
+    color: var(--primary-footer-text-color);
+    display: flex;
+    font-size: .8rem;
+    justify-content: space-between;
+}
+
+footer a:link,
+footer a:visited {
+    color: var(--primary-footer-link-color);
+}
+footer a:hover,
+footer a:active {
+    color: var(--primary-footer-hover-color);
+}
 
 
 /* Media Queries */
