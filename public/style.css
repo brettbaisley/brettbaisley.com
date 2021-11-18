@@ -20,6 +20,8 @@
 html {
     box-sizing: border-box;
     font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 *, *:before, *:after {
@@ -76,7 +78,7 @@ ul {
 
 /* Set padding on each section, for consistency */
 body > * {
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 
@@ -100,41 +102,29 @@ header h1 {
 }
 
 
-
-.masthead {
-    background: rgb(240,246,255);
-    background: linear-gradient(45deg, rgba(240,246,255,1) 0%, rgba(219,234,255,1) 100%);
+/* Hero Styles */
+.hero {
     color: var(--secondary-text-color);
     display: flex;
     flex-direction: column;
-    height: calc(100vh - var(--header-min-height-mobile));
     justify-content: center;
+    padding: 4rem 2rem;
 }
 
-.masthead h1 {
-    text-align: center;
+.hero .title {
     color: var(--primary-text-color);
     font-size: 2.5rem;
-    margin-bottom: 1.3125rem;
-}
-
-.down-icon {
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.125;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
-.look-down {
-    animation-name: look-down;
-    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
-}
-@keyframes look-down {
-    0%   { transform: translateY(0); }
-    10%  { transform: translateY(15px); }
-    20%  { transform: translateY(0); }
-    30%  { transform: translateY(15px); }
-    40%  { transform: translateY(0); }
+.hero .subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
 }
 
 
@@ -172,9 +162,41 @@ footer a:active {
 }
 
 
+.primary {
+    background-color: #7510F7;
+    color: #fff;
+    padding: 4rem 2rem 10rem 2rem;
+}
+
+.about {
+    margin-top: -5rem;
+}
+.inlay-box {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
 /* Media Queries */
 
+@media (min-width: 50em) {
+    .primary {
+        padding: 4rem 3rem 10rem 3rem;
+    }
+
+    .inlay-box {
+        padding: 2rem;
+    }
+}
 @media (min-width: 60em) {
+    /* Set padding on each section, for consistency */
+    body > * {
+        /* padding: 3rem; */
+    }
+
     header {
         min-height: 90px;
         padding: 0 4rem;
@@ -185,7 +207,13 @@ footer a:active {
         width: auto;
     }
 
-    .full-screen {
-        height: calc(100vh - var(--header-min-height-desktop));
+    .hero {
+        padding: 5rem;
+    }
+    .hero .title {
+        font-size: 3rem;
+    }
+    .hero .subtitle {
+        font-size: 1.5rem;
     }
 }
