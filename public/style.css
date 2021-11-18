@@ -28,16 +28,16 @@ html {
     box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.125rem;
     font-weight: normal;
 }
 
-ol, ul {
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 p {
@@ -81,6 +81,25 @@ body > * {
     padding: 0 1rem;
 }
 
+/* Somewhat Global Styles */
+section {
+    padding: 5rem 2rem 10rem 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.125;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+}
+
 
 
 /* Header Styles */
@@ -102,47 +121,43 @@ header h1 {
 }
 
 
-/* Hero Styles */
+/* Hero Section */
 .hero {
     color: var(--secondary-text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 4rem 2rem;
 }
 
 .hero .title {
     color: var(--primary-text-color);
     font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.125;
-    margin-bottom: 1.5rem;
-    text-align: center;
 }
 
 .hero .subtitle {
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.5;
-    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Highlighted Section, with colored background */
+.highlight {
+    background-color: #7510F7;
+    color: #fff;
+    padding: 5rem 2rem 10rem 2rem;
+}
+
+.highlight h1 {
+    margin-bottom: 1.5rem;
 }
 
 
-.social {
-    text-align: center;
-}
-.social li {
-    display: inline-block;
-    font-size: 2rem;
-}
 
 
-section > h1 {
+
+/* section > h1 {
     font-size: 2rem;
     margin-bottom: 1.3125rem;
-}
+} */
 
 
+/* Footer Section */
 footer {
     align-items: flex-end;
     background-color: var(--primary-footer-bg-color);
@@ -161,22 +176,27 @@ footer a:active {
     color: var(--primary-footer-hover-color);
 }
 
-
-.primary {
-    background-color: #7510F7;
-    color: #fff;
-    padding: 4rem 2rem 10rem 2rem;
+.social {
+    text-align: center;
+}
+.social li {
+    display: inline-block;
+    font-size: 2rem;
 }
 
-.about {
+
+
+
+.move-up {
     margin-top: -5rem;
+    padding: 1rem;
 }
 .inlay-box {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 5rem 1rem;
 }
 
 
@@ -188,7 +208,12 @@ footer a:active {
     }
 
     .inlay-box {
-        padding: 2rem;
+        padding: 5rem 2rem;
+    }
+
+    .highlight > * {
+        margin: 0 auto;
+        width: 60%;
     }
 }
 @media (min-width: 60em) {
