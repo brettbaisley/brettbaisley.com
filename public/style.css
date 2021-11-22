@@ -1,3 +1,14 @@
+/*
+NOTES
+
+OOCSS: structure, size, style
+Think: btn, btn-large, btn-green
+
+*/
+
+
+
+
 /* CSS Variables */
 :root {
     --header-min-height-mobile: 48px;
@@ -29,6 +40,7 @@ html {
 }
 
 body {
+    color: var(--primary-text-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.125rem;
     font-weight: normal;
@@ -56,16 +68,13 @@ a {
     outline: none;
     text-decoration: none;
 }
-/* A link that has not been visited */
-a:link, 
-/* A link that has been visited */
-a:visited {
+
+a:link,         /* A link that has not been visited */
+a:visited {     /* A link that has been visited */
     color: var(--primary-link-color);
 }
-/* A link that is hovered on */
-a:hover,
-/* A link that is selected */
-a:active {
+a:hover,        /* A link that is hovered on */
+a:active {      /* A link that is selected */
     color: var(--primary-link-hover-color);
     text-decoration: underline;
 }
@@ -76,14 +85,32 @@ ul {
 }
 
 
-/* Set padding on each section, for consistency */
-body > * {
-    padding: 0 1rem;
+
+/* Utility Classes */
+.center {
+    text-align: center;
 }
 
-/* Somewhat Global Styles */
-section {
-    padding: 5rem 2rem 10rem 2rem;
+.overlay {
+    margin-top: -5rem;
+    padding: 1rem;
+}
+.outline {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+}
+
+
+
+
+
+
+
+/* Global Styles */
+section,
+.section {
+    padding: 4rem 2rem;
 }
 
 .title {
@@ -93,11 +120,30 @@ section {
     margin-bottom: 1.5rem;
     text-align: center;
 }
+
+.title-large {
+    font-size: 2.5rem;
+}
+
 .subtitle {
     font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.5;
     text-align: center;
+}
+
+.subtitle-large {
+    font-size: 1.5rem;
+}
+
+.padding-bottom-large {
+    padding-bottom: 10rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -122,112 +168,60 @@ header h1 {
 
 
 /* Hero Section */
-.hero {
-    color: var(--secondary-text-color);
-    padding: 4rem 2rem;
-}
 
-.hero .title {
-    color: var(--primary-text-color);
-    font-size: 2.5rem;
-}
-
-.hero .subtitle {
-    font-size: 1.5rem;
-}
-
-/* Highlighted Section, with colored background */
+/* Highlight Section, with colored background, white text */
 .highlight {
     background-color: #7510F7;
     color: #fff;
-    padding: 5rem 2rem 10rem 2rem;
-}
-
-.highlight h1 {
-    margin-bottom: 1.5rem;
 }
 
 
-/* Role Section */
-.role-container {
-    display: flex;
-    flex-direction: column;
-}
+
 
 
 
 
 /* Footer Section */
 footer {
-    align-items: flex-end;
     background-color: var(--primary-footer-bg-color);
     color: var(--primary-footer-text-color);
-    display: flex;
-    font-size: .8rem;
-    justify-content: space-between;
 }
 
-footer a:link,
-footer a:visited {
+.invert-link-color:link,
+.invert-link-color:visited {
     color: var(--primary-footer-link-color);
 }
-footer a:hover,
-footer a:active {
+.invert-link-color:hover,
+.invert-link-color:active {
     color: var(--primary-footer-hover-color);
 }
 
 .social {
+    margin-bottom: 2rem;
     text-align: center;
 }
 .social li {
     display: inline-block;
-    font-size: 2rem;
+    padding: 0 1rem;
 }
 
 
 
-
-.move-up {
-    margin-top: -5rem;
-    padding: 1rem;
-}
-.inlay-box {
-    background-color: white;
-    border-radius: 1rem;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
-    margin: 0 auto;
-    padding: 5rem 1rem;
-}
 
 
 /* Media Queries */
 
 @media (min-width: 50em) {
-    .primary {
-        padding: 4rem 3rem 10rem 3rem;
-    }
-
-    .inlay-box {
-        padding: 5rem 2rem;
-    }
-
-    .highlight > * {
+    .max-width {
         margin: 0 auto;
         width: 60%;
     }
 
-    /* Role Section */
-    .role-container {
+    .flex-container {
         flex-direction: row;
-        justify-content: space-between;
     }
 }
 @media (min-width: 60em) {
-    /* Set padding on each section, for consistency */
-    body > * {
-        /* padding: 3rem; */
-    }
-
     header {
         min-height: 90px;
         padding: 0 4rem;
@@ -238,13 +232,7 @@ footer a:active {
         width: auto;
     }
 
-    .hero {
-        padding: 5rem;
-    }
-    .hero .title {
+    .title-large {
         font-size: 3rem;
-    }
-    .hero .subtitle {
-        font-size: 1.5rem;
     }
 }
