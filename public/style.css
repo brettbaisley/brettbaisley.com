@@ -83,6 +83,9 @@ ol,
 ul {
     list-style: none;
 }
+li {
+    margin-bottom: 1rem;
+}
 
 
 
@@ -139,6 +142,9 @@ section,
 .padding-bottom-large {
     padding-bottom: 10rem;
 }
+.margin-bottom {
+    margin-bottom: 1rem;
+}
 
 .flex-container {
     display: flex;
@@ -177,6 +183,11 @@ header h1 {
 
 
 
+/* Role Section */
+.role {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
 
 
 
