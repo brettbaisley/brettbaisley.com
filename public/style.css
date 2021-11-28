@@ -14,36 +14,76 @@ Think: btn, btn-large, btn-green
     --header-min-height-mobile: 48px;
     --header-min-height-desktop: 90px;
 
-    --primary-text-color: rgb(52, 72, 84);
-    --secondary-text-color: rgb(103, 120, 138);
+    --background: 0;
+    --background-color: hsl(0, 0%, 100%);
+    --background-color-layer1: hsl(var(--background), 0%, 95%);
+    --background-color-layer2: hsl(var(--background), 0%, 90%);
+    --background-color-layer3: hsl(var(--background), 0%, 85%);
+    --background-color-layer4: hsl(var(--background), 0%, 80%);
+    
+    --text-color: hsl(205, 24%, 27%);
+    --text-color-secondary: hsl(205, 15%, 47%);
 
-    --primary-link-color: rgb(40, 135, 225);
-    --primary-link-hover-color: rgb(32, 110, 185);
+    --link-color: hsl(210, 75%, 40%);
+    --link-color-hover: hsl(210, 75%, 50%);
 
-    --primary-footer-bg-color: rgb(28, 28, 28);
-    --primary-footer-text-color: rgb(175, 175, 175);
-    --primary-footer-link-color: var(--primary-footer-text-color);
-    --primary-footer-hover-color: rgb(137, 137, 137);
+
+
+    --background-color-highlight: hsl(265, 100%, 47%);
+    --text-color-highlight: hsl(0, 0%, 100%);
+    --link-color-highlight: hsl(210, 40%, 70%);
+    --link-color-hover-highlight: hsl(210, 40%, 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* --background-color: hsl(0, 0%, 7%); */
+        --background: 0;
+        --background-color: hsl(0, 0%, 7%);
+        --background-color-layer1: hsl(var(--background), 0%, 12%);
+        --background-color-layer2: hsl(var(--background), 0%, 17%);
+        --background-color-layer3: hsl(var(--background), 0%, 22%);
+        --background-color-layer4: hsl(var(--background), 0%, 27%);
+        
+        --text-color: hsl(205, 10%, 73%);
+        --text-color-secondary: hsl(205, 15%, 53%);
+
+        --link-color: hsl(209, 76%, 52%);
+        --link-color-hover: hsl(209, 71%, 43%); 
+        
+        --background-color-highlight: hsl(265, 95%, 76%);
+        --text-color-highlight: hsl(0, 0%, 7%);
+
+        --link-color-highlight: hsl(209, 50%, 30%);
+        --link-color-hover-highlight: hsl(209, 50%, 10%);
+    }   
+
+    .outline {
+        background-color: var(--background-color-layer1);
+        border: 1px solid var(--background-color-1);
+        box-shadow: none;
+    }
 }
 
 
 /* Minimal CSS Reset */
-html {
+* {
     box-sizing: border-box;
+}
+
+html {
     font-size: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
 body {
-    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.125rem;
     font-weight: normal;
+    line-height: 1.3;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -65,17 +105,18 @@ img {
 }
 
 a {
+    font-weight: 400;
     outline: none;
     text-decoration: none;
 }
 
 a:link,         /* A link that has not been visited */
 a:visited {     /* A link that has been visited */
-    color: var(--primary-link-color);
+    color: var(--link-color);
 }
 a:hover,        /* A link that is hovered on */
 a:active {      /* A link that is selected */
-    color: var(--primary-link-hover-color);
+    color: var(--link-color-hover);
     text-decoration: underline;
 }
 
@@ -99,9 +140,9 @@ li {
     padding: 1rem;
 }
 .outline {
-    background-color: white;
+    background-color: var(--background-color);
     border-radius: 5px;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+    box-shadow: 0 5px 5px 0 hsla(200, 50%, 90%, 0.5), 0 0 0 1px hsla(200, 50%, 90%, 0.5);
 }
 
 
@@ -177,8 +218,16 @@ header h1 {
 
 /* Highlight Section, with colored background, white text */
 .highlight {
-    background-color: #7510F7;
-    color: #fff;
+    background-color: var(--background-color-highlight);
+    color: var(--text-color-highlight);
+}
+.highlight a:link,         /* A link that has not been visited */
+.highlight a:visited {     /* A link that has been visited */
+    color: var(--link-color-highlight);
+}
+.highlight a:hover,        /* A link that is hovered on */
+.highlight a:active {      /* A link that is selected */
+    color: var(--link-color-hover-highlight);
 }
 
 
@@ -193,20 +242,6 @@ header h1 {
 
 
 /* Footer Section */
-footer {
-    background-color: var(--primary-footer-bg-color);
-    color: var(--primary-footer-text-color);
-}
-
-.invert-link-color:link,
-.invert-link-color:visited {
-    color: var(--primary-footer-link-color);
-}
-.invert-link-color:hover,
-.invert-link-color:active {
-    color: var(--primary-footer-hover-color);
-}
-
 .social {
     margin-bottom: 2rem;
     text-align: center;
