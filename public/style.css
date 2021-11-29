@@ -35,35 +35,7 @@ Think: btn, btn-large, btn-green
     --link-color-hover-highlight: hsl(210, 40%, 50%);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* --background-color: hsl(0, 0%, 7%); */
-        --background: 0;
-        --background-color: hsl(0, 0%, 7%);
-        --background-color-layer1: hsl(var(--background), 0%, 12%);
-        --background-color-layer2: hsl(var(--background), 0%, 17%);
-        --background-color-layer3: hsl(var(--background), 0%, 22%);
-        --background-color-layer4: hsl(var(--background), 0%, 27%);
-        
-        --text-color: hsl(205, 10%, 73%);
-        --text-color-secondary: hsl(205, 15%, 53%);
 
-        --link-color: hsl(209, 76%, 52%);
-        --link-color-hover: hsl(209, 71%, 43%); 
-        
-        --background-color-highlight: hsl(265, 95%, 76%);
-        --text-color-highlight: hsl(0, 0%, 7%);
-
-        --link-color-highlight: hsl(209, 50%, 30%);
-        --link-color-hover-highlight: hsl(209, 50%, 10%);
-    }   
-
-    .outline {
-        background-color: var(--background-color-layer1);
-        border: 1px solid var(--background-color-1);
-        box-shadow: none;
-    }
-}
 
 
 /* Minimal CSS Reset */
@@ -280,5 +252,37 @@ header h1 {
 
     .title-large {
         font-size: 3rem;
+    }
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: 0;
+        --background-color: hsl(var(--background), 0%, 7%);
+        --background-color-layer1: hsl(var(--background), 0%, 12%);
+        --background-color-layer2: hsl(var(--background), 0%, 17%);
+        --background-color-layer3: hsl(var(--background), 0%, 22%);
+        --background-color-layer4: hsl(var(--background), 0%, 27%);
+        
+        --text-color: hsl(205, 10%, 73%);
+        --text-color-secondary: hsl(205, 15%, 53%);
+
+        --link-color: hsl(209, 76%, 52%);
+        --link-color-hover: hsl(209, 71%, 43%); 
+        
+        --background-color-highlight: hsl(265, 95%, 76%);
+        --text-color-highlight: hsl(0, 0%, 7%);
+
+        --link-color-highlight: hsl(209, 50%, 30%);
+        --link-color-hover-highlight: hsl(209, 50%, 10%);
+    }   
+
+    .outline {
+        background-color: var(--background-color-layer1);
+        border: 1px solid var(--background-color-1);
+        box-shadow: none;
     }
 }
