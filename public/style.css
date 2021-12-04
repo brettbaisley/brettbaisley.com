@@ -29,10 +29,10 @@ Think: btn, btn-large, btn-green
 
 
 
-    --background-color-highlight: hsl(265, 100%, 47%);
+    --background-color-highlight: #6400f0;
     --text-color-highlight: hsl(0, 0%, 100%);
-    --link-color-highlight: hsl(210, 40%, 70%);
-    --link-color-hover-highlight: hsl(210, 40%, 50%);
+    --link-color-highlight: hsl(210, 40%, 88%);
+    --link-color-hover-highlight: hsl(210, 50%, 95%);
 }
 
 
@@ -278,7 +278,7 @@ header h1 {
         --text-color-highlight: hsl(0, 0%, 7%);
 
         --link-color-highlight: hsl(209, 80%, 12%);
-        --link-color-hover-highlight: hsl(209, 50%, 10%);
+        --link-color-hover-highlight: hsl(209, 50%, 5%);
     }   
 
     .outline {
