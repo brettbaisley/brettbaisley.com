@@ -277,7 +277,7 @@ header h1 {
         --background-color-highlight: hsl(265, 95%, 76%);
         --text-color-highlight: hsl(0, 0%, 7%);
 
-        --link-color-highlight: hsl(209, 50%, 30%);
+        --link-color-highlight: hsl(209, 80%, 12%);
         --link-color-hover-highlight: hsl(209, 50%, 10%);
     }   
 
