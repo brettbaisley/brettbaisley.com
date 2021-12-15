@@ -79,7 +79,7 @@ img {
 a {
     font-weight: 400;
     outline: none;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 a:link,         /* A link that has not been visited */
@@ -274,11 +274,11 @@ header h1 {
         --link-color: hsl(209, 76%, 52%);
         --link-color-hover: hsl(209, 71%, 43%); 
         
-        --background-color-highlight: hsl(265, 95%, 76%);
-        --text-color-highlight: hsl(0, 0%, 7%);
+        --background-color-highlight: #b888fc;
+        --text-color-highlight: rgb(18, 18, 18);
 
-        --link-color-highlight: hsl(209, 80%, 12%);
-        --link-color-hover-highlight: hsl(209, 50%, 5%);
+        --link-color-highlight: hsl(209, 69%, 20%);
+        --link-color-hover-highlight: hsl(209, 69%, 30%);
     }   
 
     .outline {
