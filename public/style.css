@@ -115,10 +115,20 @@ li {
 
 
 
+/* Styles */
+
+.btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+}
 
 section,
 .section {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
 }
 
 
@@ -143,7 +153,7 @@ section,
 
 
 
-.fun-fact {
+.aside {
     display: flex;
     align-items:center;
     flex-direction: column;
@@ -151,23 +161,21 @@ section,
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
-.fun-fact h3 {
-    font-size: 2rem;
+.aside h3 {
+    font-size: 3rem;
     font-weight: 100;
 }
-.fun-fact img {
+.aside img {
     margin-top: 2rem;
     width: 200px;
 }
-
-
 @media screen and (min-width: 600px) {
-    .fun-fact {
+    .aside {
         flex-direction: row;
     }
-    .fun-fact > img {
+    .aside > img {
         margin: 0;
         padding-left: 2rem;
     }
@@ -175,11 +183,13 @@ section,
 
 
 
+
+
+
 .history h3 {
     color: var(--heading-color-primary);
     font-size: 2rem;
     font-weight: 200;
-    margin-bottom: 1rem;
 }
 
 
@@ -188,14 +198,15 @@ section,
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
-.about-decade li i {
+.about-decade i {
     display: block;
     font-size: 3rem;
     margin-bottom: 1rem;
     text-align: center;
 }
+
 
 @media screen and (min-width: 550px) {
     .about-decade {
