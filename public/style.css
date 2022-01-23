@@ -151,6 +151,37 @@ section,
 }
 
 
+.experience {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.experience li {
+    border: 1px solid #d0d0d0;
+    padding: 1rem;
+}
+.experience em {
+    color: var(--heading-color-primary);
+    display: block;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 100;
+    text-align: center;
+}
+.experience .suffix {
+    font-size: 2rem;
+}
+@media screen and (min-width: 650px) {
+    .experience {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 1000px) {
+    .experience {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 
 
 .aside {
@@ -196,7 +227,7 @@ section,
 
 .about-decade {
     display: grid;
-    gap: 1rem;
+    gap: 3rem;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 4rem;
 }
