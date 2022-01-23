@@ -97,14 +97,28 @@ li {
 
 
 
-
+section,
 .section {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-.section-hero h1 {
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    justify-content: center;
+}
+.hero h1 {
     font-size: clamp(1.5rem, 10vw, 5rem); 
+    margin-bottom: 1rem;
+}
+.hero h2 {
+    font-size: clamp(1.6rem, 4vw, 3rem); 
+    font-weight: 100;
+    margin-bottom: 2rem;
 }
 
 
@@ -124,17 +138,20 @@ li {
 }
 .fun-fact > img {
     display: block;
-    margin: 2rem auto 2rem auto;
-    padding: 0 2rem;
+    margin: 2rem auto;
     width: 200px;
 
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
     .fun-fact {
         display: flex;
         padding: 2rem 6rem;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .fun-fact > img {
+        padding-left: 2rem;
     }
 }
