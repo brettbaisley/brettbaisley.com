@@ -170,6 +170,7 @@ section,
 
 
 
+
 /* Experience Styles */
 .experience {
     display: grid;
@@ -225,6 +226,9 @@ section,
     margin-top: 2rem;
     width: 200px;
 }
+.resume span {
+    margin-bottom: 1rem;
+}
 @media screen and (min-width: 600px) {
     .aside {
         flex-direction: row;
@@ -232,6 +236,9 @@ section,
     .aside img {
         margin: 0;
         padding-left: 2rem;
+    }
+    .resume span {
+        margin: 0;
     }
 }
 
