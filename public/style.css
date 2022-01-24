@@ -96,7 +96,6 @@ img {
 a {
     font-weight: 400;
     outline: none;
-    /* text-decoration: none; */
 }
 
 a:link,         /* A link that has not been visited */
@@ -121,8 +120,17 @@ li {
 
 
 
-/* Styles */
 
+/* Section Styles */
+section,
+.section {
+    padding: 4rem 1rem;
+}
+
+
+
+
+/* Button Styles */
 .btn {
     background-color: transparent;
     border: 1px solid white;
@@ -131,18 +139,18 @@ li {
     padding: 1rem 2rem;
     text-decoration: none;
 }
+.btn i {
+    margin-right: .5rem;
+}
 .btn-primary {
     background-color: var(--btn-bg-primary);
     color: white;
 }
 
-section,
-.section {
-    padding: 4rem 1rem;
-}
 
 
 
+/* Hero Styles */
 .hero {
     display: flex;
     flex-direction: column;
@@ -161,6 +169,8 @@ section,
 }
 
 
+
+/* Experience Styles */
 .experience {
     display: grid;
     gap: 1rem;
@@ -194,6 +204,8 @@ section,
 
 
 
+
+/* Aside Styles */
 .aside {
     display: flex;
     align-items:center;
@@ -226,12 +238,7 @@ section,
 
 
 
-
-
-
-
-
-
+/* About Decade Styles */
 .about-decade {
     display: grid;
     gap: 3rem;
@@ -244,8 +251,6 @@ section,
     margin-bottom: 1rem;
     text-align: center;
 }
-
-
 @media screen and (min-width: 550px) {
     .about-decade {
         grid-template-columns: 1fr 1fr 1fr;
@@ -260,8 +265,7 @@ section,
 
 
 
-
-
+/* WestJet Article Styles */
 .westjet-article {
     color: white;
 }
