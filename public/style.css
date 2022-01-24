@@ -2,38 +2,41 @@
 /* Common breakpoints: 480px, 768px, 1024px, and 1280px) */
 
 :root {
-    --background-color: #f5f5f7;
 
-    --btn-bg-primary: #2477e4;
+    --white: #ffffff;
+    --lightgray: #f5f5f5;
+    --darkgray: #1d1d1d;
+    --blue: #2477e4;
+    --orange: #f89626;
 
-    --text-color: #000;
+    --bg-color-primary: var(--white);
+    --bg-color-secondary: var(--lightgray);
+
+    --btn-bg-primary: var(--blue);
+    --btn-bg-cta: var(--orange);
+
+    --text-color-primary: var(--darkgray);
+    --text-color-secondary: hsl(205, 15%, 47%);
+
+    --link-color: rgb(0, 102, 204);
 
 
     --section-padding: 1.2rem;
 
-    --heading-color-primary: #2477e4;
+    --heading-color-primary: var(--blue);
     
-    /* --header-min-height-mobile: 48px;
+    /*
+    --header-min-height-mobile: 48px;
     --header-min-height-desktop: 90px;
+    */
 
+    /*
     --background: 0;
     --background-color-layer1: hsl(var(--background), 0%, 95%);
     --background-color-layer2: hsl(var(--background), 0%, 90%);
     --background-color-layer3: hsl(var(--background), 0%, 85%);
     --background-color-layer4: hsl(var(--background), 0%, 80%);
-    
-    --text-color: hsl(205, 24%, 27%);
-    --text-color-secondary: hsl(205, 15%, 47%);
-
-    --link-color: hsl(210, 75%, 40%);
-    --link-color-hover: hsl(210, 75%, 50%);
-
-
-
-    --background-color-highlight: #6400f0;
-    --text-color-highlight: hsl(0, 0%, 100%);
-    --link-color-highlight: hsl(210, 40%, 88%);
-    --link-color-hover-highlight: hsl(210, 50%, 95%); */
+    */
 }
 
 
@@ -51,8 +54,8 @@ html {
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--bg-color-primary);
+    color: var(--text-color-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.125rem;
     font-weight: normal;
@@ -101,10 +104,10 @@ a {
 a:link,         /* A link that has not been visited */
 a:visited {     /* A link that has been visited */
     color: var(--link-color);
+    text-decoration: none;
 }
 a:hover,        /* A link that is hovered on */
 a:active {      /* A link that is selected */
-    color: var(--link-color-hover);
     text-decoration: underline;
 }
 
@@ -113,9 +116,7 @@ ul {
     list-style: none;
     margin-bottom: 1.5rem;
 }
-li {
-    margin-bottom: 1rem;
-}
+
 
 
 
@@ -133,7 +134,7 @@ section,
 /* Button Styles */
 .btn {
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: 5px;
     margin: 0 1rem;
     padding: 1rem 2rem;
@@ -144,7 +145,7 @@ section,
 }
 .btn-primary {
     background-color: var(--btn-bg-primary);
-    color: white;
+    color: var(--white);
 }
 
 
@@ -171,14 +172,19 @@ section,
 
 
 
-/* Experience Styles */
+/* What I Do Styles */
+.what-i-do {
+    background-color: var(--bg-color-secondary);
+}
 .experience {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
 }
 .experience li {
+    background-color: var(--white);
     border: 1px solid #d0d0d0;
+    border-radius: 5px;
     padding: 1rem;
 }
 .experience em {
@@ -214,11 +220,11 @@ section,
     justify-content: center;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    color: white;
+    color: var(--white);
     padding: 3rem 2rem;
 }
 .aside h3 {
-    color: white;
+    color: var(--white);
     font-size: 3rem;
     font-weight: 100;
 }
@@ -228,6 +234,9 @@ section,
 }
 .resume span {
     margin-bottom: 1rem;
+}
+.resume a {
+    color: var(--white);
 }
 @media screen and (min-width: 600px) {
     .aside {
@@ -274,7 +283,7 @@ section,
 
 /* WestJet Article Styles */
 .westjet-article {
-    color: white;
+    color: var(--white);
 }
 .westjet-img {
     display: block; 
