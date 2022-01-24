@@ -4,6 +4,8 @@
 :root {
     --background-color: #f5f5f7;
 
+    --btn-bg-primary: #2477e4;
+
     --text-color: #000;
 
 
@@ -70,9 +72,13 @@ h5,
 h6 {
     margin-bottom: 1rem;
 }
-
 h2 {
     font-size: 2rem;
+}
+h3 {
+    color: var(--heading-color-primary);
+    font-size: 2rem;
+    font-weight: 200;
 }
 
 p {
@@ -124,6 +130,10 @@ li {
     margin: 0 1rem;
     padding: 1rem 2rem;
     text-decoration: none;
+}
+.btn-primary {
+    background-color: var(--btn-bg-primary);
+    color: white;
 }
 
 section,
@@ -195,6 +205,7 @@ section,
     padding: 3rem 2rem;
 }
 .aside h3 {
+    color: white;
     font-size: 3rem;
     font-weight: 100;
 }
@@ -206,7 +217,7 @@ section,
     .aside {
         flex-direction: row;
     }
-    .aside > img {
+    .aside img {
         margin: 0;
         padding-left: 2rem;
     }
@@ -217,11 +228,7 @@ section,
 
 
 
-.history h3 {
-    color: var(--heading-color-primary);
-    font-size: 2rem;
-    font-weight: 200;
-}
+
 
 
 
@@ -248,4 +255,17 @@ section,
     .about-decade {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+
+
+
+
+
+.westjet-article {
+    color: white;
+}
+.westjet-img {
+    display: block; 
+    margin-bottom: 3rem;
 }
