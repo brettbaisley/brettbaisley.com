@@ -282,10 +282,10 @@ section,
 
 
 /* WestJet Article Styles */
-.westjet-article {
+.westjet-article a {
     color: var(--white);
 }
 .westjet-img {
     display: block; 
-    margin-bottom: 3rem;
+    margin: 3rem auto;
 }
