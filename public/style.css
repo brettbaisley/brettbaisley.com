@@ -91,7 +91,7 @@ h3 {
 }
 h4 {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 300;
     /* --typography-spacing-vertical: 1.25rem; */
 }
 
@@ -188,6 +188,18 @@ section > *:first-child,
 
 
 
+/* Work In progress */
+.wip {
+    background-color:var(--orange);
+    color: var(--white);
+    font-size: .7rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
 /* What I Do Styles */
 .what-i-do {
     background-color: var(--bg-color-secondary);
@@ -223,6 +235,17 @@ section > *:first-child,
     .experience {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+.skills {
+    color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+}
+.skills li {
+    background: var(--blue);
+    border-radius: 2rem;
+    margin: calc(var(--spacing) / 2);
+    padding: calc(var(--spacing) / 2) var(--spacing);
 }
 
 
