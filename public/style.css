@@ -153,7 +153,6 @@ section > *:first-child,
     border-radius: 5px;
     margin: 0 var(--spacing);
     padding: var(--spacing) 2rem;
-    text-decoration: none;
 }
 .btn i {
     margin-right: .5rem;
@@ -240,12 +239,13 @@ section > *:first-child,
     color: var(--white);
     display: flex;
     flex-wrap: wrap;
+    font-size: calc(var(--font-size) * .8);
+    gap: calc(var(--spacing) / 2);
 }
 .skills li {
     background: var(--blue);
     border-radius: 2rem;
-    margin: calc(var(--spacing) / 2);
-    padding: calc(var(--spacing) / 2) var(--spacing);
+    padding: calc(var(--spacing) / 3) var(--spacing);
 }
 
 
@@ -254,12 +254,13 @@ section > *:first-child,
 /* Aside Styles */
 .aside {
     display: flex;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: var(--white);
+    gap: 2rem;
     padding: 3rem 2rem;
 }
 .aside h3 {
@@ -269,12 +270,8 @@ section > *:first-child,
     margin-top: 0;
     margin-bottom: 1rem;
 }
-.aside img {
-    margin-top: 2rem;
+.aside img { 
     width: 200px;
-}
-.resume span {
-    margin-bottom: var(--spacing);
 }
 .resume a {
     color: var(--white);
@@ -282,13 +279,6 @@ section > *:first-child,
 @media screen and (min-width: 600px) {
     .aside {
         flex-direction: row;
-    }
-    .aside img {
-        margin: 0;
-        padding-left: 2rem;
-    }
-    .resume span {
-        margin: 0;
     }
 }
 
