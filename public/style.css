@@ -320,3 +320,11 @@ section > *:first-child,
     display: block; 
     margin: 3rem auto;
 }
+
+
+
+/* Credly Badge Styles */
+.credly-badge {
+    width: 64px;
+    float: left;
+}
