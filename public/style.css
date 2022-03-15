@@ -170,6 +170,7 @@ section > *:first-child,
     display: flex;
     flex-direction: column;
     height: 95vh;
+    height: 100svh;
     justify-content: center;
 }
 .hero h1 {
@@ -239,13 +240,13 @@ section > *:first-child,
     color: var(--white);
     display: flex;
     flex-wrap: wrap;
-    font-size: calc(var(--font-size) * .8);
-    gap: calc(var(--spacing) / 2);
+    font-size: calc(var(--font-size) * .6);
+    gap: calc(var(--spacing) / 4);
 }
 .skills li {
     background: var(--blue);
     border-radius: 2rem;
-    padding: calc(var(--spacing) / 3) var(--spacing);
+    padding: calc(var(--spacing) / 4) var(--spacing);
 }
 
 
