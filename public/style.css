@@ -87,12 +87,12 @@ h3 {
     font-size: 2rem;
     font-weight: 100;
     color: var(--text-color-alternative);
-    /* --typography-spacing-vertical: 1.5rem; */
+    margin-bottom: calc(var(--typography-spacing-vertical) / 2);
 }
 h4 {
     font-size: 1.5rem;
     font-weight: 300;
-    /* --typography-spacing-vertical: 1.25rem; */
+    margin: calc(var(--typography-spacing-vertical) / 2) 0;
 }
 
 p {
@@ -161,6 +161,11 @@ section > *:first-child,
     background-color: var(--btn-bg-primary);
     color: var(--white);
 }
+.btn-cta {
+    background-color: var(--btn-bg-cta);
+    border: none;
+    color: var(--white);
+}
 
 
 
@@ -196,7 +201,6 @@ section > *:first-child,
 .experience {
     display: grid;
     gap: var(--spacing);
-    grid-template-columns: repeat(2, 1fr);
 }
 .experience li {
     background-color: var(--white);
@@ -215,7 +219,12 @@ section > *:first-child,
 .experience .suffix {
     font-size: 2rem;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 560px) {
+    .experience {
+        grid-template-columns: repeat(2, 1fr);        
+    }
+}
+@media screen and (min-width: 780px) {
     .experience {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -223,6 +232,11 @@ section > *:first-child,
 @media screen and (min-width: 1000px) {
     .experience {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1200px) {
+    .experience {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 .skills {
