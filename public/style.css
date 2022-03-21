@@ -441,6 +441,9 @@ section,
     padding: calc(var(--spacing) / 2);
     width: 100%;
 }
+.contact-form > textarea {
+    resize: vertical;
+}
 
 .contact-form > button {
     margin: 0;
