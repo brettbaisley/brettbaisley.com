@@ -21,7 +21,7 @@ function submitForm() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Successfully sent email. ", data);
+        console.log("Message successfully sent.");
         statusMessage.innerHTML = data.message;
         statusMessage.className = "success";
     })
