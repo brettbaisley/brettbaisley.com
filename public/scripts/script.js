@@ -8,6 +8,7 @@ contactForm.addEventListener('submit', event => {
 
 function submitForm() {
     const targetAPI = '/api/email';
+    const statusMessage = document.getElementById("contact-form-status");
 
     var formData = new URLSearchParams();
     formData.append('name', document.getElementById('name').value);
@@ -21,14 +22,12 @@ function submitForm() {
     .then(response => response.json())
     .then(data => {
         console.log("Successfully sent email. ", data);
-        const status = document.getElementById("contact-form-status");
-        status.innerHTML = data.message;
-        status.className = "success";
+        statusMessage.innerHTML = data.message;
+        statusMessage.className = "success";
     })
     .catch( (error) => {
         console.log("ERROR: ", error);
-        const status = document.getElementById("contact-form-status");
-        status.innerHTML = data.message;
-        status.className = "warning";
+        statusMessage.innerHTML = "An issue prevented your message from sending. Please try again later.";
+        statusMessage.className = "warning";
     });
 }
