@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "run": "swa start ../public --api-location ."
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.2"
+  },
+  "devDependencies": {}
+}
