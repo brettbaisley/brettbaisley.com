@@ -20,11 +20,21 @@
     --white: #ffffff;
     --lightgray: #f5f5f5;
     --darkgray: #1d1d1d;
+    --footergray: #3a3a3a;
     --blue: #2477e4;
     --orange: #f89626;
+    
+    /* Warning/Success  */
+    --warning-bg: #e09e9e;
+    --warning-border: #573434;
+    --warning-text: #573434;
+    --success-bg: #8cc475;
+    --success-border: #024600;
+    --success-text: #024600;
 
     --bg-color-primary: var(--white);
     --bg-color-secondary: var(--lightgray);
+    --bg-color-footer: var(--footergray);
 
     --btn-bg-primary: var(--blue);
     --btn-bg-cta: var(--orange);
@@ -174,7 +184,8 @@ textarea {
 
 /* Section Styles */
 section,
-.section {
+.section,
+.footer {
     padding: 4rem var(--spacing);
 }
 
@@ -202,6 +213,23 @@ section,
     color: var(--white);
 }
 
+
+/* Message Status Styles */
+.success {
+    border: 1px solid var(--success-border);
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    font-size: .8rem;
+    padding: var(--spacing);
+}
+
+.warning {
+    border: 1px solid var(--warning-border);
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+    font-size: .8rem;
+    padding: var(--spacing);
+}
 
 
 
@@ -380,3 +408,45 @@ section,
     width: 64px;
     float: left;
 }
+
+
+/* Footer Styles */
+.footer {
+    align-items: unset;
+    background-color: var(--bg-color-footer);
+    color: var(--lightgray);
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media screen and (min-width: 650px) {
+    .footer {
+        align-items: flex-end;
+        flex-direction: row;
+    }
+}
+
+.footer > * { 
+    flex: 1; 
+}
+
+/* Contact Form Styles */
+.contact-form > * { 
+    display: block;
+}
+
+.contact-form > input,
+.contact-form > textarea { 
+    margin-bottom: var(--spacing);
+    padding: calc(var(--spacing) / 2);
+    width: 100%;
+}
+.contact-form > textarea {
+    resize: vertical;
+}
+
+.contact-form > button {
+    margin: 0;
+    cursor: pointer;
+}
+
