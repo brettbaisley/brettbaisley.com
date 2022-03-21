@@ -16,16 +16,16 @@ module.exports = async function (context, req) {
 
   const params = new URLSearchParams(context.req.body);
   var msg = {
-      to: 'brett.baisley@gmail.com',
-      from: 'brett@baisley.dev', // Use the email address or domain you verified above
+      to: 'web@baisley.dev',
+      from: 'web@baisley.dev', // Use the email address or domain you verified above
       subject: 'Message From brettbaisley.com',
-      text: `From ${params.get('name')} ${params.get('email')}].\n\n${params.get('message')}`,
-      html: `From <strong>${params.get('name')}</strong> [${params.get('email')}]</p><p>${params.get('message').replace(newLineRegex, "<br>")}</p>`,
+      text: `From ${params.get('name')} ${params.get('email')}].\n\n------------\n\n${params.get('message')}`,
+      html: `From <strong>${params.get('name')}</strong> [${params.get('email')}]</p><hr /><p>${params.get('message').replace(newLineRegex, "<br>")}</p>`,
       };
 
 
   try {
-    sgMail.send(msg);
+    await sgMail.send(msg);
     context.res = {
       status: 200, /* Defaults to 200 */
       body: {
