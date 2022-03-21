@@ -439,6 +439,7 @@ section,
 .contact-form > textarea { 
     margin-bottom: var(--spacing);
     padding: calc(var(--spacing) / 2);
+    width: 100%;
 }
 
 .contact-form > button {
