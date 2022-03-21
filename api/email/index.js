@@ -29,6 +29,7 @@ module.exports = async function (context, req) {
     context.res = {
       status: 200, /* Defaults to 200 */
       body: {
+        "status": "success",
         "message": "Your message has successfully been sent."
       }
     };
@@ -40,6 +41,7 @@ module.exports = async function (context, req) {
       context.res = {
         status: 400,
         body: {
+          "status": "failure",
           "message": "An issue prevented your message from sending. Please try again later."
         }
       };

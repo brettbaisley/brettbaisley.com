@@ -21,9 +21,15 @@ function submitForm() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Message successfully sent.");
-        statusMessage.innerHTML = data.message;
-        statusMessage.className = "success";
+        if (data.status === 'success') {
+            console.log("Message successfully sent.");
+            statusMessage.innerHTML = data.message;
+            statusMessage.className = "success";
+        } else {
+            console.log("ERROR: ", data)
+            statusMessage.innerHTML = "An issue prevented your message from sending. Please try again later.";
+            statusMessage.className = "warning";
+        }
     })
     .catch( (error) => {
         console.log("ERROR: ", error);
