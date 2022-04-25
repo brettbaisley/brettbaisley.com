@@ -6,60 +6,28 @@ This is the repo to my personal website, brettbaisley.com. There is nothing too 
 To start a new repo on your desktop, run these steps:
 
 1. Open Terminal
-
 2. Run the following commands:
-```
-cd /Users/brett/code/websites
-
-git clone <GITHUB_URL>
-```
-
-
-## Initialize Firebase (One-time Setup)
-Initial Firebase Hosting, as a one-time setup, and configure Github Actions to push PR's to Firebase.
-
-```
-cd /Users/brett/code/websites/<REPO>
-
-firebase init
+```sh
+cd $HOME/code/websites
+git clone https://github.com/brettbaisley/brettbaisley.com.git
 ```
 
-Select this option: `Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys`
 
-and then follow the prompts to set up your application.
+## Ensure Azure Static Web Apps CLI is Installed Globally
+Run the following command, if you don't already have Azure 
 
-
-## Create a Branch
-In VSCode, 
-
-1. Click the `main` branch on the bottom-left of the toolbar
-
-2. Select the `Create new branch` option and give the branch a name
+```sh
+cd $HOME/code/websites/brettbaisley.com
+npm install -g @azure/static-web-apps-cli
+```
 
 
+## Launch SWA for local development
+For local development, all environment variables (or Application Settings as Azure tends to call them), for Azure functions are stored in a `local.settings.json` file in the `api` folder. As this contains secrets, it should be added to `.gitignore` so you don't accidentially check this file in.
 
-## Code the new Branch
-With the correct branch selected, make all related code changes that pertain to the new branch.
+See https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file for more details on the `local.settings.json` file.
 
-When finished,
-
-1. Click on the `Source Control` button
-
-2. Stage the files with the changes
-
-3. Enter a commit message, and then click the checkmark to commit
-
-4. Click the `Sync Changes` button to push the changes up to Github
-
-
-## Create a Pull Request
-Click the Github icon and create a pull request. You want to pull the changes in the new branch into the `main` branch.
-
-This action will create a new preview link on Firebase. You can use it to test the changes on Firebase, before commiting them to the main branch.
-
-## Merge Pull Request
-Review the pull request from previous step. Test the website in various browsers to ensure it is working as expected.
-
-Once ready, accept and merge the pull request. This will trigger teh Github Action to update the live channel on Firebase, making the changes public.
-
-When asked, delete the branch, so you don't have unused branches lying around.
+```sh
+cd $HOME/code/websites/brettbaisley.com/api
+swa start ../public --api-location .
+```

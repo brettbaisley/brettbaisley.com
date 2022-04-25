@@ -2,38 +2,46 @@
 const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener('submit', event => {
     event.preventDefault();
+    document.getElementById("submit").disabled = true;
     submitForm();
 });
 
 
-function submitForm() {
+async function submitForm() {
     const targetAPI = '/api/email';
-    const statusMessage = document.getElementById("contact-form-status");
-
+    
     var formData = new URLSearchParams();
     formData.append('name', document.getElementById('name').value);
     formData.append('email', document.getElementById('email').value);
     formData.append('message', document.getElementById('message').value);
-
-    fetch(targetAPI, {
+    
+    const sendEmailMessageResult = await sendEmailMessage(targetAPI, {
         method: 'POST',
         body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            console.log("Message successfully sent.");
-            statusMessage.innerHTML = data.message;
-            statusMessage.className = "success";
-        } else {
-            console.log("ERROR: ", data)
-            statusMessage.innerHTML = "An issue prevented your message from sending. Please try again later.";
-            statusMessage.className = "warning";
-        }
-    })
-    .catch( (error) => {
-        console.log("ERROR: ", error);
-        statusMessage.innerHTML = "An issue prevented your message from sending. Please try again later.";
-        statusMessage.className = "warning";
     });
+    
+    updateSendEmailStatus(sendEmailMessageResult);
+}
+
+
+async function sendEmailMessage(URL, OPTIONS) {
+    const response = await fetch(URL, OPTIONS);
+    const responseJSON = await response.json();
+    console.log(responseJSON);
+    return responseJSON;
+}
+
+function updateSendEmailStatus(data) {
+    const statusMessage = document.getElementById("contact-form-status");
+    document.getElementById("submit").disabled = false;
+    
+    if (data.status === 'success') {
+        console.log("Message successfully sent.");
+        statusMessage.className = "success";
+        statusMessage.innerHTML = data.message;
+    } else {
+        console.log("ERROR: ", data)
+        statusMessage.className = "warning";
+        statusMessage.innerHTML = "An issue prevented your message from sending. Please try again later.";
+    }
 }
