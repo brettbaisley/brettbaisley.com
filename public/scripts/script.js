@@ -19,7 +19,8 @@ async function submitForm() {
         method: 'POST',
         body: formData
     });
-    
+
+    document.getElementById("submit").disabled = false;
     updateSendEmailStatus(sendEmailMessageResult);
 }
 
@@ -33,7 +34,6 @@ async function sendEmailMessage(URL, OPTIONS) {
 
 function updateSendEmailStatus(data) {
     const statusMessage = document.getElementById("contact-form-status");
-    document.getElementById("submit").disabled = false;
     
     if (data.status === 'success') {
         console.log("Message successfully sent.");
