@@ -9,7 +9,7 @@
     <meta name="author" content="Brett Baisley" />
     <meta name="copyright" content="Brett Baisley" />
     <meta name=”robots” content="index, nofollow"> 
-    <link rel="canonical" href="https://www.brettbaisley.com/" />
+    <link rel="canonical" href="https://brettbaisley.com/" />
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicons -->
@@ -30,25 +30,38 @@
   </head>
   
 <body>
-  <header class="section hero" id="header">
+  <!-- Header with Navbar -->
+  <header id="top" class="site-header">
+    <h1>&lt;logo&gt;</h1>
+    <nav class="topnav">
+      <a href="#whatido">What I Do</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#skills">Skills</a>
+      <a href="#mystory">My Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero">
     <h1>Hello, I'm&nbsp;Brett.</h1>
     <h2>Site Reliability Engineer</h2>
     <p>Something catchy will go here, when I think of it...</p>
-  </header>
+  </section>
 
-  <section class="what-i-do" id="what-i-do">
-    <div class="char-limit">
-      <h2>What I Do</h2>
-      <p>I use my experience as a software and support engineer to come up with elegant solutions to complex problems. This is achieved by breaking down complicated problems into smaller, distinct issues and solving each separately.</p>
-      <p>I provide high quality, white glove service to all of my clients. I strive to ensure their issues are addressed as quickly and professionally as possible, and to their utmost satisifaction. I want them to walk away confident that the work was done right.</p>
-      <p>My current role is on a team ensuring our mission-critical trading systems are running with zero downtime. In today's fast paced world global economy, clients need to be able to execute trades, anytime, anywhere. To acheive this, we are using some of the latest technologies, such as Apache Kafka, while moving some of our core applications to Microsoft's Azure cloud.</p>
-      <p>Recently started to perform more site reliability engineer (SRE) tasks, in that I am working to automate manual toil via python/shell scripts, automate ready for business (RFB) checks in tooks like Apica and Selenium, monitoring SLI/SLO's via products such as AppDynamics, Prometheus and Grafana.</p>
-    </div>
+
+  <section class="text-limit" id="whatido">
+    <h2>What I Do</h2>
+    <p>I use my experience as a software and support engineer to come up with elegant solutions to complex problems. This is achieved by breaking down complicated problems into smaller, distinct issues and solving each separately.</p>
+    <p>I provide high quality, white glove service to all of my clients. I strive to ensure their issues are addressed as quickly and professionally as possible, and to their utmost satisifaction. I want them to walk away confident that the work was done right.</p>
+    <p>My current role is on a team ensuring our mission-critical trading systems are running with zero downtime. In today's fast paced world global economy, clients need to be able to execute trades, anytime, anywhere. To acheive this, we are using some of the latest technologies, such as Apache Kafka, while moving some of our core applications to Microsoft's Azure cloud.</p>
+    <p>Recently started to perform more site reliability engineer (SRE) tasks, in that I am working to automate manual toil via python/shell scripts, automate ready for business (RFB) checks in tooks like Apica and Selenium, monitoring SLI/SLO's via products such as AppDynamics, Prometheus and Grafana.</p>
   </section>
 
   <section class="highlights" id="highlights">
-    <h3>Highlights</h3>
-      <ul class="experience">
+    <h2>Highlights</h2>
+      <ul>
         <li><em>18</em> years experience working in technology at a Fortune 500 financial service company.</li>
         <li><em>60<span class="suffix">+</span></em>applications supported, from authoring platform to securities lending trading systems.</li>
         <li><em>33<span class="suffix">%</span></em>decrease in outages due to ongoing incident management.</li>
@@ -57,10 +70,10 @@
       </ul>
   </section>
 
-  <section class="skill" id="skills">
-    <h3>Skills</h3>
-    <h4>Technical Skills</h4>
-    <ul class="skills">
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <h3>Technical Skills</h3>
+    <ul>
       <li>Windows</li>
       <li>Linux</li>
       <li>MacOS</li>
@@ -89,7 +102,7 @@
       <li>ServiceNow</li>
     </ul>
     
-    <h4>Soft Skills</h4>
+    <h3>Soft Skills</h3>
     <ul class="skills">
       <li>Agile</li>
       <li>DevOps</li>
@@ -108,68 +121,64 @@
 
 
 
-  <aside class="aside resume">
-    <span>Save or print my resume.</span>
-    <a class="btn btn-cta" download href="assets/brett-baisley-resume.docx"><i class="fal fa-file-word"></i>Resume</a>
+  <aside class="aside section flex-2">
+    <div>
+      <h2>What to know more?</h2>
+      <p>Download my complete resume!</p>
+    </div>
+
+    <a href="assets/brett-baisley-resume.docx" download="assets/brett-baisley-resume.docx">
+      <button class="button is-primary"><i class="fal fa-file-word"></i>Resume</button>
+    </a>
   </aside>
 
 
-  <section class="history" id="history">
-    <h2>Brief History</h2>
-      <h3>1990's - How IT All Began</h3>
-      <ul class="about-decade">
-        <li><i class="fal fa-gamepad"></i>Played video games on a Commodore 64.</li>
-        <li><i class="fal fa-typewriter"></i>Completed homework assignments on an Amiga 2000.</li>
-        <li><i class="fal fa-browser"></i>Created my frist websites using an Intel 386 PC.</li>
-        <li><i class="fal fa-wrench"></i>Spent weekends repairing desktops for family and friends.</li>
-        <li><i class="fal fa-newspaper"></i>Worked after school as a front-end designer for the local newspaper.</li>
-      </ul>
+  <section class="mystory" id="mystory">
+    <h2>My Story</h2>
+    <h3>1990's - How IT All Began</h3>
+    <ul class="about-decade">
+      <li><i class="fal fa-gamepad"></i>Played video games on a Commodore 64.</li>
+      <li><i class="fal fa-typewriter"></i>Completed homework assignments on an Amiga 2000.</li>
+      <li><i class="fal fa-browser"></i>Created my frist websites using an Intel 386 PC.</li>
+      <li><i class="fal fa-wrench"></i>Spent weekends repairing desktops for family and friends.</li>
+      <li><i class="fal fa-newspaper"></i>Worked after school as a front-end designer for the local newspaper.</li>
+    </ul>
 
-      <h3>2000's - Professional Development</h3>
-      <ul class="about-decade">
-        <li><i class="fa-light fa-graduation-cap"></i>Received a Bachelor of Computer Science degree from <a href="https://unb.ca">UNB</a>.</li>
-        <li><i class="fal fa-map-marker-alt"></i>Moved to Halifax, Nova Scotia.</li>
-        <li><i class="fal fa-desktop"></i>Worked my way up to senior consultant at <a href="https://us.nttdata.com">Keane <em>(now NTT DATA)</em></a>.</li>
-        <li><i class="fal fa-map-marker-alt"></i>Moved to New York City.</li>
-        <li><i class="fal fa-laptop-code"></i>Hired as a reliability and production engineer at <a href="https://morganstanley.com">Morgan Stanley</a>.</li>
-      </ul>
+    <h3>2000's - Professional Development</h3>
+    <ul class="about-decade">
+      <li><i class="fa-light fa-graduation-cap"></i>Received a Bachelor of Computer Science degree from <a href="https://unb.ca">UNB</a>.</li>
+      <li><i class="fal fa-map-marker-alt"></i>Moved to Halifax, Nova Scotia.</li>
+      <li><i class="fal fa-desktop"></i>Worked my way up to senior consultant at <a href="https://us.nttdata.com">Keane <em>(now NTT DATA)</em></a>.</li>
+      <li><i class="fal fa-map-marker-alt"></i>Moved to New York City.</li>
+      <li><i class="fal fa-laptop-code"></i>Hired as a reliability and production engineer at <a href="https://morganstanley.com">Morgan Stanley</a>.</li>
+    </ul>
 
-      <h3>2010's - Embracing Adulthood</h3>
-      <ul class="about-decade">
-        <li><i class="fal fa-rings-wedding"></i>Got married to my wife, Enerlise.</li>
-        <li><i class="fal fa-house"></i>Bought our first house.</li>
-        <li><i class="fal fa-child"></i>Became a first time father...</li>
-        <li><i class="fal fa-child"></i>...and again, 13 months later.</li>
-      </ul>
+    <h3>2010's - Embracing Adulthood</h3>
+    <ul class="about-decade">
+      <li><i class="fal fa-rings-wedding"></i>Got married to my wife, Enerlise.</li>
+      <li><i class="fal fa-house"></i>Bought our first house.</li>
+      <li><i class="fal fa-child"></i>Became a first time father...</li>
+      <li><i class="fal fa-child"></i>...and again, 13 months later.</li>
+    </ul>
 
 
-      <h3>2020's - Still Going Strong</h3>
-      <ul class="about-decade">
-        <li><i class="fal fa-repeat"></i>Moved to the Securities Lending support team.</li>
-        <li><i class="fal fa-house-user"></i>Spent a lot of time working from home due to COVID-19.</li>
-        <li><i class="fa-brands fa-react"></i>Learning React. Created a simple <a href="https://gifts.brettbaisley.com">web app</a>.</li>
-        <li><i class="fa-light fa-certificate"></i>
-            <a href="https://www.credly.com/badges/95adffd9-f4db-4ed8-8726-539b1576a993/public_url">
-            <img class="credly-badge"
-                srcset="images/site-reliability-engineering-sre-1.png 1x, 
-                        images/site-reliability-engineering-sre-2.png 2x,
-                        images/site-reliability-engineering-sre-3.png 3x,
-                        images/site-reliability-engineering-sre-4.png 4x"
-                src="images/site-reliability-engineering-sre-2.png">
-            </a>
-            Earned a <a href="https://www.credly.com/badges/95adffd9-f4db-4ed8-8726-539b1576a993/public_url">SRE Practitioner</a> Credly badge.
-        </li>
-        <li><i class="fa-brands fa-microsoft"></i>Currently studying for an Azure certificate.</li>
-      </ul>
+    <h3>2020's - Still Going Strong</h3>
+    <ul class="about-decade">
+      <li><i class="fal fa-repeat"></i>Moved to the Securities Lending support team.</li>
+      <li><i class="fal fa-house-user"></i>Spent a lot of time working from home due to COVID-19.</li>
+      <li><i class="fa-brands fa-react"></i>Learning React. Created a simple <a href="https://gifts.baisley.dev">web app</a>.</li>
+      <li><i class="fa-light fa-certificate"></i>Earned a <a href="https://www.credly.com/badges/95adffd9-f4db-4ed8-8726-539b1576a993/public_url">SRE Practitioner</a> Credly badge.
+      </li>
+      <li><i class="fa-brands fa-microsoft"></i>Currently studying for an Azure certificate.</li>
+    </ul>
   </section>
       
       
-  <aside class="aside fun-fact">
+  <aside class="aside section flex-2">
     <div>
-      <h3>Fun Fact</h3>
+      <h2>Fun Fact</h2>
       <p>I have a photo published in the <time date="2007-05-01">May 2017</time> issue of <em>WestJet Magazine</em>. Click the image to see!</p>
     </div>
-
     <a href="westjet-article.html">
       <img srcset="images/westjet-mag-05-17-cover-200w.jpg 1x,
                 images/westjet-mag-05-17-cover-400w.jpg 2x,
@@ -180,17 +189,19 @@
     </a>
   </aside>
 
-  <footer class="footer">
-    <div class="footer-links">
+  <footer class="section flex-2 space-between">
+    <div>
       <h4>Navigation</h4>
-      <a href="#what-i-do">What I Do</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#skills">Skills</a>
-      <a href="#history">History</a>
-      <a href="#header">Back to Top</a>
+      <ul class="nav flex-column">
+        <li><a href="#whatido">What I Do</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#mystory">My Story</a></li>
+        <li><a href="#top">Back to Top</a></li>
+      </ul>
     </div>
-    <div>&nbsp;</div>
-    <div class="contact">
+
+    <div class="contact" id="contact">
       <form action="#" method="post" class="contact-form" id="contact-form">
         <label for="name">Name *</label>
         <input type="text" name="name" id="name" placeholder="John Doe" required>
@@ -203,7 +214,7 @@
         
         <p id="contact-form-status" hidden></p>
 
-        <button id="submit" class="btn btn-cta" type="submit">Send Message</button>
+        <button id="submit" class="button is-primary" type="submit">Send Message</button>
       </form>
     </div>
   </footer>
