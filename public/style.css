@@ -93,14 +93,12 @@ video {
 ::after {
   border-width: 0;
   border-style: solid;
-  /* border-color: theme('borderColor.DEFAULT', currentColor); */
   box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
-
 /* End -- Minimal Preflight Reset */
 
 
@@ -213,12 +211,50 @@ textarea {
   line-height: inherit;
 }
 
-nav,
-.nav {
+
+.navbar {
     display: flex;
-    gap: 1rem;
-    & a {
-        text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & h1 {
+        margin: 0;
+    }
+}
+
+.navigation {
+    flex: 1;
+    flex-basis: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in, visibility 0.3s ease-out;
+
+
+    & li {
+        padding: .75rem;
+        & a {
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .navigation {
+        flex-basis: auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        visibility: visible;
+        max-height: initial;
     }
 }
 
