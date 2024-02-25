@@ -217,6 +217,7 @@ textarea {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 
     & h1 {
         margin: 0;
@@ -242,6 +243,17 @@ textarea {
             display: block;
         }
     }
+}
+
+.menu-toggle {
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid navy;
+    font-size: 1.75rem;
+    height: 42px;
+    line-height: 100%;
+    padding-bottom: 7px;
+    width: 42px;
 }
 
 @media (min-width: 768px) {
