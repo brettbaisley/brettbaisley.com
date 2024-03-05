@@ -348,10 +348,23 @@ section,
 
 
 /* Start -- Utilities */
-a .fal,
-a .fa-light {
-    margin-right: .75rem;
+.material-symbols-outlined {
+    display: block !important;
+    font-size: 4rem !important;
+    text-align: center;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24;
 }
+a .material-symbols-outlined {
+    font-size: inherit !important;
+    display: inline-block !important;
+    margin-right: .75rem;
+    line-height: inherit;
+}
+
 
 .text-limit {
     max-width: 80ch;
@@ -499,6 +512,10 @@ a .fa-light {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: var(--white);
 
+    & h2 {
+        margin-bottom: 0;
+    }
+    
     & img {
         width: 200px;
     }
