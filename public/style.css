@@ -252,7 +252,7 @@ textarea {
     font-size: 1.75rem;
     height: 42px;
     line-height: 100%;
-    padding: 0 0 7px;
+    padding-bottom: 7px;
     width: 42px;
 }
 
