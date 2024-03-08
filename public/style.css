@@ -348,24 +348,6 @@ section,
 
 
 /* Start -- Utilities */
-.material-symbols-outlined {
-    display: block !important;
-    font-size: 4rem !important;
-    text-align: center;
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 200,
-        'GRAD' 0,
-        'opsz' 24;
-}
-a .material-symbols-outlined {
-    font-size: inherit !important;
-    display: inline-block !important;
-    margin-right: .75rem;
-    line-height: inherit;
-}
-
-
 .text-limit {
     max-width: 80ch;
     margin: 0 auto;
