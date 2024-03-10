@@ -323,7 +323,7 @@ button[disabled] {
 /* Start -- Section Styles */
 section,
 .section {
-    padding: 3rem 2rem;
+    padding: 1rem;
     
     @media (min-width: 768px) {
         padding: 4rem;
@@ -493,6 +493,7 @@ section,
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: var(--white);
+    padding: 3rem 1rem;
 
     & h2 {
         margin-bottom: 0;
