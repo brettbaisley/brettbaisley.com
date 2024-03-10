@@ -323,7 +323,7 @@ button[disabled] {
 /* Start -- Section Styles */
 section,
 .section {
-    padding: 1rem;
+    padding: 3rem 2rem;
     
     @media (min-width: 768px) {
         padding: 4rem;
