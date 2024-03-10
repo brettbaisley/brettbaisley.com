@@ -481,7 +481,7 @@ section,
         & > li {
             background: var(--blue);
             border-radius: 2rem;
-            padding: .5rem 1rem
+            padding: .5rem 1rem;
         }
     }
 }
