@@ -530,7 +530,7 @@ footer {
     color: white;
 
     & a {
-        color: var(--link-color-);
+        color: var(--link-color);
     
     }
 }
