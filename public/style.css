@@ -297,11 +297,6 @@ textarea {
 }
 
 
-.button.is-info {}
-.button.is-success {}
-.button.is-warning {}
-.button.is-danger {}
-
 .buttons .button {
     margin-bottom: .5rem;
 }
