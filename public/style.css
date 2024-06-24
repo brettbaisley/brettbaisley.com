@@ -530,8 +530,12 @@ footer {
     color: white;
 
     & a {
-        color: var(--link-color);
-    
+        color: var(--link-color-alt);
+
+        &:link,         /* A link that has not been visited */
+        &:visited {     /* A link that has been visited */
+            color: var(--link-color);
+            }
     }
 }
 /* End -- Footer Styles */
