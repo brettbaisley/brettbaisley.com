@@ -15,6 +15,7 @@
     --text-color-alternative: rgb(36, 119, 228);
 
     --link-color: rgb(0, 102, 204);
+    --link-color-alt: rgb(92, 173, 255);
 
 
     /* Typography */
@@ -527,6 +528,11 @@ section,
 footer {
     background-color: var(--darkgray);
     color: white;
+
+    & a {
+        color: var(--link-color-);
+    
+    }
 }
 /* End -- Footer Styles */
 
