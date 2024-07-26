@@ -141,8 +141,8 @@ h1 {
     margin-bottom: 1em;
 }
 h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 900;
     margin-bottom: 1em;
 
     &:not(:first-child) {
@@ -213,9 +213,14 @@ textarea {
 }
 
 
+/* ---------------- */
+
+
+
 .navbar {
     display: flex;
     flex-wrap: wrap;
+    font-size: .8rem;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
@@ -226,8 +231,6 @@ textarea {
 }
 
 .navigation {
-    flex: 1;
-    flex-basis: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -237,12 +240,11 @@ textarea {
     transition: max-height 0.2s ease-in, visibility 0.2s ease-out;
 
 
-    & li {
-        padding: .75rem;
-        & a {
+    & li a {
             text-decoration: none;
             display: block;
-        }
+            line-height: 1.5;
+            padding: .5em .51em;
     }
 }
 
@@ -321,7 +323,7 @@ section,
 .section {
     padding: 1rem;
     
-    @media (min-width: 768px) {
+    /*@media (min-width: 768px) {
         padding: 4rem;
     }
     
@@ -331,8 +333,12 @@ section,
     
     @media (min-width: 1280px) {
         padding: 4rem 8rem;
+    } */
+    & h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 900;
     }
-    
 }
 /* End -- Section Styles */
 
@@ -414,24 +420,34 @@ section,
 
 /* Start -- Hero Styles */
 .hero {
-    display: flex;
-    flex-direction: column;
-    height: 95vh;
-    height: 100svh;
-    justify-content: center;
-    
+    min-height: 80svh;
+    padding: 1rem;
+    text-align: center;
+
     & h1 {
-        font-size: clamp(1.5rem, 10vw, 5rem); 
-        margin-bottom: var(--spacing);
+ 
+        font-size: 6rem;
+        line-height: 1;
+        margin: 3rem auto;
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, .2);
     }
+
     & h2 {
-        color: var(--heading-color-primary);
-        font-size: clamp(2rem, 5vw, 3.5rem); 
-        font-weight: 100;
-        margin-bottom: calc(var(--spacing) * 2);
-        margin-top: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1;
+        margin: 5rem 0 auto;
+    }
+
+    & p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        max-width: 70ch;
+        margin: 0 auto 3rem;
     }
 }
+
+
 /* End -- Hero Styles */
 
 
@@ -487,7 +503,7 @@ section,
 /* Start -- Aside Styles */
 .aside {
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(79, 74, 180) 0%, rgb(42, 42, 178) 45%, rgba(0,212,255,1) 100%);
     color: var(--white);
     padding: 3rem 1rem;
 
