@@ -249,8 +249,8 @@ h4 {
 }
 
 .navigation {
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     gap: .5rem;
     align-items: center;
     justify-content: center;
@@ -259,6 +259,11 @@ h4 {
     margin: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in, visibility 0.2s ease-out;
+
+    @media (min-width: 680px) {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .navigation button {
@@ -275,7 +280,7 @@ h4 {
         font-size: 5rem;
         line-height: 1;
         margin: 3rem auto;
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, .2);
+        /* text-shadow: 0px 1px 5px rgba(0, 0, 0, .2); */
     }
 
     & h2 {
