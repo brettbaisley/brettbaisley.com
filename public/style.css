@@ -15,7 +15,7 @@
     --text-color-secondary: hsl(205, 15%, 47%);
     --text-color-alternative: rgb(36, 119, 228);
 
-    --link-color: rgb(78, 159, 240);
+    --link-color: rgb(0, 102, 204);
     --link-color-alt: rgb(92, 173, 255);
 
     --is-primary-text: #ffffff;
@@ -327,4 +327,8 @@ footer .navigation {
     gap: unset;
     justify-self: unset;
     margin-bottom: 2rem;
+}
+
+.navigation a {
+    color: rgb(78, 159, 240);
 }
