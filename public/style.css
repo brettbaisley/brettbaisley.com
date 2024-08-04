@@ -167,6 +167,7 @@ h2 {
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 1em;
+    text-align: center;
 
     &:not(:first-child) {
         margin-top: 3rem;
@@ -176,6 +177,7 @@ h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1em;
+    text-align: center;
     
     &:not(:first-child) {
         margin-top: 3rem;
@@ -210,8 +212,8 @@ h4 {
 }
 
 .is-primary {
-    background-color: var(--orange);
-    border: 1px solid var(--orange);
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
     color: var(--is-primary-text);
 }
 
@@ -302,7 +304,7 @@ h4 {
 
 aside {
     background: rgb(109,109,201);
-    background: radial-gradient(circle, rgb(55, 55, 200) 0%, rgb(55, 150, 245) 100%);
+    background: radial-gradient(circle, rgb(94, 123, 170) 0%, rgb(115, 175, 223) 100%);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
