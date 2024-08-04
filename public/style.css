@@ -301,12 +301,12 @@ h4 {
 
 aside {
     background: rgb(109,109,201);
-    background: radial-gradient(circle, rgba(109,109,201,1) 0%, rgba(0,212,255,1) 100%);
+    background: radial-gradient(circle, rgb(55, 55, 200) 0%, rgb(55, 150, 245) 100%);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
 }
-aside h2,
+aside h2,z
 aside p {
     margin-bottom: 1rem;
 }
