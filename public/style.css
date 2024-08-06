@@ -10,6 +10,7 @@
     --blue: #0049DA;
     --orange: #e45400;
     --purple: #7710D1;
+    --black: #000000;
 
     --text-color-primary: var(--darkgray);
     --text-color-secondary: hsl(205, 15%, 47%);
@@ -212,8 +213,8 @@ h4 {
 }
 
 .is-primary {
-    background-color: var(--blue);
-    border: 1px solid var(--blue);
+    background-color: var(--black);
+    border: 1px solid var(--black);
     color: var(--is-primary-text);
 }
 
@@ -279,8 +280,9 @@ h4 {
     text-align: center;
 
     & h1 {
- 
         font-size: 5rem;
+        font-weight: 500;
+        letter-spacing: -.125rem;
         line-height: 1;
         margin: 3rem auto;
         /* text-shadow: 0px 1px 5px rgba(0, 0, 0, .2); */
