@@ -306,7 +306,7 @@ h4 {
 
 aside {
     background: rgb(109,109,201);
-    background: radial-gradient(circle, rgb(94, 123, 170) 0%, rgb(115, 175, 223) 100%);
+    background: radial-gradient(circle, rgb(108, 80, 249) 0%, rgb(79, 172, 247) 100%);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
