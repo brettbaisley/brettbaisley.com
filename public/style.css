@@ -7,7 +7,7 @@
     --lightgray: #f5f5f5;
     --darkgray: #1d1d1d;
     --footergray: #3a3a3a;
-    --blue: #0049DA;
+    --blue: #0071e5;
     --orange: #e45400;
     --purple: #7710D1;
     --black: #000000;
@@ -16,7 +16,7 @@
     --text-color-secondary: hsl(205, 15%, 47%);
     --text-color-alternative: rgb(36, 119, 228);
 
-    --link-color: rgb(0, 102, 204);
+    --link-color: var(--blue);
     --link-color-alt: rgb(92, 173, 255);
 
     --is-primary-text: #ffffff;
@@ -114,7 +114,8 @@ a:active {      /* A link that is selected */
 
 button {
     font-size: 1.125rem;
-    border-radius: 5px;
+    border-radius: 5rem;
+    background-color: transparent;
     border-width: 1px;
     cursor: pointer;
     justify-content: center;
@@ -213,15 +214,14 @@ h4 {
 }
 
 .is-primary {
-    background-color: var(--black);
-    border: 1px solid var(--black);
-    color: var(--is-primary-text);
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white);
 }
 
 .is-secondary {
-    background-color: transparent;
-    border: 1px solid var(--orange);
-    color: var(--is-secondary-text);
+    border: 1px solid var(--blue);
+    color: var(--blue);
 }
 
 .no-list-style {
@@ -305,8 +305,8 @@ h4 {
 
 
 aside {
-    background: rgb(109,109,201);
-    background: radial-gradient(circle, rgb(108, 80, 249) 0%, rgb(79, 172, 247) 100%);
+    background: rgb(24,91,210);
+    background: linear-gradient(145deg, rgba(24,91,210,1) 0%, rgba(112,231,255,1) 100%);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
@@ -335,4 +335,8 @@ footer .navigation {
 
 footer .navigation a {
     color: #a0d0ff;
+}
+
+#whatido {
+    background-color: var(--lightgray);
 }
