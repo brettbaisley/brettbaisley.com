@@ -244,7 +244,7 @@ h4 {
     text-align: left;
     width: 100%;
 
-    @media (min-width: 711px) {
+    @media (min-width: 679px) {
         text-align: center;
     }
 }
