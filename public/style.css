@@ -228,6 +228,15 @@ h4 {
     list-style: none;
     padding-left: 0;
 }
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+}
 /* End -- Utilities */
 
 
@@ -303,7 +312,6 @@ h4 {
     }
 }
 
-
 aside {
     background: rgb(24,91,210);
     background: linear-gradient(145deg, rgba(24,91,210,1) 0%, rgba(112,231,255,1) 100%);
@@ -315,6 +323,12 @@ aside h2,z
 aside p {
     margin-bottom: 1rem;
 }
+
+
+#whatido {
+    background-color: var(--lightgray);
+}
+
 
 footer {
     background-color: var(--footergray);
@@ -337,6 +351,5 @@ footer .navigation a {
     color: #a0d0ff;
 }
 
-#whatido {
-    background-color: var(--lightgray);
-}
+
+
