@@ -336,7 +336,7 @@ section h3:first-of-type {
     }
 
     & p {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         font-weight: 300;
         max-width: 70ch;
         margin: 0 auto 3rem;
@@ -346,6 +346,12 @@ section h3:first-of-type {
 #whatido p {
     max-width: 70ch;
     margin: 1rem auto;
+}
+
+.highlights em {
+    color: var(--footergray);
+    font-weight: 900;
+    font-style: normal;
 }
 
 aside {
