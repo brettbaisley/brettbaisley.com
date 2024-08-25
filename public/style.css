@@ -338,6 +338,11 @@ section h3:first-of-type {
     }
 }
 
+#whatido p {
+    max-width: 70ch;
+    margin: 1rem auto;
+}
+
 aside {
     background: rgb(24,91,210);
     background: linear-gradient(145deg, rgba(24,91,210,1) 0%, rgba(112,231,255,1) 100%);
