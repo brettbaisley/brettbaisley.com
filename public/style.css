@@ -237,6 +237,13 @@ h4 {
     max-width: 1200px;
     padding: 1rem;
 }
+
+[class^="fa"] {
+    display: block;
+    font-size: 3rem;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+}
 /* End -- Utilities */
 
 
