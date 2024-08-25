@@ -348,6 +348,17 @@ section h3:first-of-type {
     margin: 1rem auto;
 }
 
+.highlights {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.highlights li {
+    list-style: none;
+}
 .highlights em {
     color: var(--footergray);
     font-weight: 900;
