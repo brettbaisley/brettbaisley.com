@@ -112,6 +112,11 @@ a:active {      /* A link that is selected */
     text-decoration: underline;
 }
 
+ul,
+ol {
+    padding-inline-start: 1rem;
+}
+
 button {
     font-size: 1.125rem;
     border-radius: 5rem;
