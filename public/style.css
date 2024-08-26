@@ -298,29 +298,6 @@ section h3:first-of-type {
     align-items: center;
 }
 
-.navigation {
-    display: none;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in, visibility 0.2s ease-out;
-
-    @media (min-width: 680px) {
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-.navigation .button {
-    font-size: .75rem;
-    line-height: 2rem;
-}
-
 .hero {
     min-height: 80svh;
     padding: 1rem;
@@ -394,22 +371,30 @@ aside p {
 footer {
     background-color: var(--footergray);
     color: var(--white);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
     padding: 1rem;
-    text-align: left;
 }
 footer h3 {
     margin-bottom: .5rem;
 }
-footer .navigation {
-    align-items: unset;
-    flex-direction: column;
-    gap: unset;
-    justify-self: unset;
-    margin-bottom: 2rem;
+
+
+.footer-navigation  {
+    list-style: none;
+    padding: 0;
+
+    & a {
+        color: #a0d0ff;
+        line-height: 2rem;
+    }
 }
 
-footer .navigation a {
-    color: #a0d0ff;
+@media (min-width: 680px) {
+    footer {
+        flex-direction: row;
+    }
 }
 
 
