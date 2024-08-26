@@ -117,7 +117,7 @@ ol {
     padding-inline-start: 1rem;
 }
 
-button {
+.button {
     font-size: 1.125rem;
     border-radius: 5rem;
     background-color: transparent;
@@ -225,6 +225,12 @@ section h3:first-of-type {
     color: var(--white);
 }
 
+.button.is-primary {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white);
+}
+
 .is-secondary {
     border: 1px solid var(--blue);
     color: var(--blue);
@@ -310,8 +316,9 @@ section h3:first-of-type {
     }
 }
 
-.navigation button {
+.navigation .button {
     font-size: .75rem;
+    line-height: 2rem;
 }
 
 .hero {
