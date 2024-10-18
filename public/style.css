@@ -248,10 +248,21 @@ section h3:first-of-type {
 .grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(1, 1fr); 
     margin: 0 auto;
     max-width: 1200px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
+
+
 
 [class^="fa"] {
     font-size: 3rem;
