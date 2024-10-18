@@ -30,7 +30,8 @@
     --font-weight: 400;
 
     /* Spacing, Margin, Padding */
-    --border-radius: 0.25rem; 
+    --border-radius: 1rem; 
+    --group-gap: 0.125rem;
     --border-width: 1px;
     --outline-width: 3px;
     --spacing: 1rem;
@@ -147,7 +148,6 @@ body {
     margin: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     @media (min-width: 768px) {
@@ -248,10 +248,21 @@ section h3:first-of-type {
 .grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(1, 1fr); 
     margin: 0 auto;
     max-width: 1200px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
+
+
 
 [class^="fa"] {
     font-size: 3rem;
@@ -335,23 +346,40 @@ section h3:first-of-type {
     margin: 1rem auto;
 }
 
-.highlights {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    margin: 0 auto;
-    max-width: 1000px;
+.highlights-group {
+    list-style-type: none;
     padding: 0;
+    
+    border-radius: 1rem;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr;
+    gap: 0.125rem;
+    overflow: hidden;
+    text-align: center;
 }
 
-.highlights li {
-    list-style: none;
+@media (min-width: 600px) {
+    .highlights-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-.highlights em {
-    color: var(--footergray);
-    font-weight: 900;
-    font-style: normal;
+
+@media (min-width: 1024px) {
+    .highlights-group {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
+
+.highlights-group li {
+    background-color: var(--lightgray);
+    padding: 1rem;
+}
+.highlights-group em {
+    font-size: 4rem;
+    display: block;
+}
+
 
 aside {
     background: rgb(24,91,210);
