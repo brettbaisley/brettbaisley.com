@@ -264,7 +264,7 @@ section h3:first-of-type {
 .grid li {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: left;
     gap: 2rem
 }
 
@@ -272,13 +272,8 @@ section h3:first-of-type {
 
 [class^="fa"] {
     font-size: 3rem;
-    margin: 0 auto 1rem auto;
     text-align: left;
-    width: auto;
-
-    @media (min-width: 679px) {
-        text-align: center;
-    }
+    width: 1rem;
 }
 
 .skills {
@@ -392,6 +387,15 @@ section h3:first-of-type {
     display: block;
 }
 
+.experience-group {
+    margin: 0 auto;
+    max-width: 80ch;
+    
+    & li {
+        margin-bottom: .75rem;
+    }
+}
+
 
 aside {
     background: rgb(24,91,210);
@@ -439,6 +443,3 @@ footer h3 {
         flex-direction: row;
     }
 }
-
-
-
