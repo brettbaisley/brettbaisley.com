@@ -165,7 +165,7 @@ body {
 
 section:not(.hero) {
     margin: 3rem auto;
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 
 h1 {
@@ -262,17 +262,24 @@ section h3:first-of-type {
     }
 }
 
+.grid li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem
+}
+
 
 
 [class^="fa"] {
     font-size: 3rem;
-    margin: 0 auto 1rem auto;
-    text-align: left;
-    width: 100%;
+    /* margin: 0 auto 1rem auto; */
+    /* text-align: left; */
+    /* width: auto; */
 
-    @media (min-width: 679px) {
+    /* @media (min-width: 679px) {
         text-align: center;
-    }
+    } */
 }
 
 .skills {
@@ -313,8 +320,7 @@ section h3:first-of-type {
 }
 
 .hero {
-    min-height: 80svh;
-    padding: 1rem;
+    padding: 3rem;
     text-align: center;
 
     & h1 {
@@ -338,6 +344,13 @@ section h3:first-of-type {
         font-weight: 300;
         max-width: 70ch;
         margin: 0 auto 3rem;
+    }
+}
+
+.hero p {
+    width: 30ch;
+    @media (min-width: 768px) {
+        width: auto;
     }
 }
 
@@ -385,7 +398,7 @@ aside {
     background: rgb(24,91,210);
     background: linear-gradient(145deg, rgba(24,91,210,1) 0%, rgba(112,231,255,1) 100%);
     color: var(--white);
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     text-align: center;
 }
 aside h2,z

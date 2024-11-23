@@ -1,15 +1,15 @@
 // For the navigation menu toggle button
-document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.querySelector('.menu-toggle');
-    var navigation = document.getElementById('navigation');
+// document.addEventListener('DOMContentLoaded', function() {
+//     var menuToggle = document.querySelector('.menu-toggle');
+//     var navigation = document.getElementById('navigation');
 
-    menuToggle.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        navigation.style.maxHeight = expanded ? '0' : navigation.scrollHeight + 'px';
-        navigation.style.visibility = expanded ? 'hidden' : 'visible';
-    });
-});
+//     menuToggle.addEventListener('click', function() {
+//         var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+//         this.setAttribute('aria-expanded', !expanded);
+//         navigation.style.maxHeight = expanded ? '0' : navigation.scrollHeight + 'px';
+//         navigation.style.visibility = expanded ? 'hidden' : 'visible';
+//     });
+// });
 
 
 // Add EventListener to trigger whem submitting form
