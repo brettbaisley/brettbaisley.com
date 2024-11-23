@@ -341,13 +341,6 @@ section h3:first-of-type {
     }
 }
 
-.hero p {
-    width: 30ch;
-    @media (min-width: 768px) {
-        width: auto;
-    }
-}
-
 #whatido p {
     max-width: 70ch;
     margin: 1rem auto;
