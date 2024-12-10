@@ -14,13 +14,23 @@
         <label for="message" class="mt-8">Message *</label>
         <textarea name="message" id="message" cols="30" rows="6" required class="p-4 rounded border-solid border-1 border-gray-700 bg-gray-800"></textarea>
         
-        <p id="contact-form-status" class="border border-1 border-green-500 rounded-xl p-4 bg-green-900 text-green-400 mt-8">Message Sect Successfully!</p>
+        <p id="contact-form-status" class=""></p>
 
-        <button id="submit" class="mt-8 p-4 rounded-xl bg-blue-500" type="submit">Send Message</button>
+        <div>
+            <button id="submit" class="mt-8 p-4 rounded bg-blue-500 cursor-pointer" type="submit">Send Message</button>
+            <button id="resetButton" class="mt-8 p-4 rounded border border-1 border-blue-500 cursor-pointer" type="reset">Clear</button>
+        </div>
     </div>
 </form>
 
 <script>
+    // Add EventListener to clear status messages
+    const clearFormButton = document.getElementById("resetButton");
+    clearFormButton.addEventListener('click', event => {
+        document.getElementById("contact-form-status").innerText = "";
+        document.getElementById("contact-form-status")?.classList.remove("border","border-1","border-green-500","border-red-500","rounded-xl","p-4","bg-green-900","bg-red-900","text-green-400","text-red-400","mt-8");
+    });
+    
     // Add EventListener to trigger when submitting form
     const contactForm = document.getElementById("contact-form");
     contactForm.addEventListener('submit', event => {
