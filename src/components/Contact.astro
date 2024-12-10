@@ -16,7 +16,8 @@
         
         <p id="contact-form-status" class=""></p>
 
-        <p hidden class="mt-8 p-4 border border-green-500 border-red-500 rounded-xl bg-green-900 be-red-900 text-green-400 text-red-400"></p>
+        <!-- Tailwindcss V4 beta doesn't have SafeList, so this was to get the styling added to the CSS file -->
+        <p hidden class="mt-8 p-4 rounded-xl border border-green-500 border-red-500 bg-green-900 bg-red-900 text-green-400 text-red-400"></p>
 
         <div>
             <button id="submit" class="mt-8 p-4 rounded bg-blue-500 cursor-pointer" type="submit">Send Message</button>
@@ -30,7 +31,7 @@
     const clearFormButton = document.getElementById("resetButton");
     clearFormButton.addEventListener('click', event => {
         document.getElementById("contact-form-status").innerText = "";
-        document.getElementById("contact-form-status")?.classList.remove("border-green-500","border-red-500","bg-green-900","bg-red-900","text-green-400","text-red-400");
+        document.getElementById("contact-form-status")?.classList.remove("mt-8","p-4","rounder-xl","border","border-green-500","border-red-500","bg-green-900","bg-red-900","text-green-400","text-red-400");
     });
     
     // Add EventListener to trigger when submitting form
@@ -60,14 +61,14 @@
 
             if (response.ok) {
                 document.getElementById("contact-form-status").innerText = "Message sent successfully!";
-                document.getElementById("contact-form-status")?.classList.add("border","border-green-500","rounded-xl","p-4","bg-green-900","text-green-400","mt-8");
+                document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-green-500","bg-green-900","text-green-400");
             } else {
                 document.getElementById("contact-form-status").innerText = "Failed to send message.";
-                document.getElementById("contact-form-status")?.classList.add("border","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
+                document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
             }
         } catch (error) {
             document.getElementById("contact-form-status").innerText = "An error occurred.";
-            document.getElementById("contact-form-status")?.classList.add("border","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
+            document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
         } finally {
             document.getElementById("submit").disabled = false;
         }
