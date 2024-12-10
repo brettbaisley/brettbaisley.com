@@ -16,9 +16,11 @@
         
         <p id="contact-form-status" class=""></p>
 
+        <p hidden class="mt-8 p-4 border border-green-500 border-red-500 rounded-xl bg-green-900 be-red-900 text-green-400 text-red-400"></p>
+
         <div>
             <button id="submit" class="mt-8 p-4 rounded bg-blue-500 cursor-pointer" type="submit">Send Message</button>
-            <button id="resetButton" class="mt-8 p-4 rounded border border-1 border-blue-500 cursor-pointer" type="reset">Clear</button>
+            <button id="resetButton" class="mt-8 p-4 rounded border border-blue-500 cursor-pointer" type="reset">Clear</button>
         </div>
     </div>
 </form>
@@ -28,7 +30,7 @@
     const clearFormButton = document.getElementById("resetButton");
     clearFormButton.addEventListener('click', event => {
         document.getElementById("contact-form-status").innerText = "";
-        document.getElementById("contact-form-status")?.classList.remove("border","border-1","border-green-500","border-red-500","rounded-xl","p-4","bg-green-900","bg-red-900","text-green-400","text-red-400","mt-8");
+        document.getElementById("contact-form-status")?.classList.remove("border-green-500","border-red-500","bg-green-900","bg-red-900","text-green-400","text-red-400");
     });
     
     // Add EventListener to trigger when submitting form
@@ -58,14 +60,14 @@
 
             if (response.ok) {
                 document.getElementById("contact-form-status").innerText = "Message sent successfully!";
-                document.getElementById("contact-form-status")?.classList.add("border","border-1","border-green-500","rounded-xl","p-4","bg-green-900","text-green-400","mt-8");
+                document.getElementById("contact-form-status")?.classList.add("border","border-green-500","rounded-xl","p-4","bg-green-900","text-green-400","mt-8");
             } else {
                 document.getElementById("contact-form-status").innerText = "Failed to send message.";
-                document.getElementById("contact-form-status")?.classList.add("border","border-1","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
+                document.getElementById("contact-form-status")?.classList.add("border","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
             }
         } catch (error) {
             document.getElementById("contact-form-status").innerText = "An error occurred.";
-            document.getElementById("contact-form-status")?.classList.add("border","border-1","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
+            document.getElementById("contact-form-status")?.classList.add("border","border-red-500","rounded-xl","p-4","bg-red-900","text-red-400","mt-8");
         } finally {
             document.getElementById("submit").disabled = false;
         }
