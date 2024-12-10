@@ -1,0 +1,13 @@
+---
+import {Image} from 'astro:assets'
+import WestJetArticleImage from '../images/westjet-mag-05-17-story.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+    <h1>WestJet Magazine Article</h1>
+    <p>This is</p>
+    <Image src={WestJetArticleImage} alt="WestJet Magazine, May 2017, Article on Miramichi" />
+
+    <a href="/" class="p-12"><i class="fal fa-arrow-circle-left"></i> Back</a>
+</BaseLayout>
