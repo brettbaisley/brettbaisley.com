@@ -26,10 +26,10 @@ app.http('email', {
         
         try {
             await sgMail.send(msg);
-            return { status: 200, body: 'Your message has successfully been sent.' }; 
+            return { status: 200, body: 'Your message has sent successfully.' }; 
         } catch (error) {
             context.log(`Error sending email: ${error}`);
-            return { status: 500, body: 'ERROR: Could not send email. Please try again later.' };
+            return { status: 500, body: 'There was an issue sending message. Please try again later.' };
         }
     }
 });
