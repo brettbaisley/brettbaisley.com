@@ -28,27 +28,40 @@
 
 <script>
     // Add EventListener to clear status messages
-    const clearFormButton = document.getElementById("resetButton");
-    clearFormButton.addEventListener('click', event => {
-        document.getElementById("contact-form-status").innerText = "";
-        document.getElementById("contact-form-status")?.classList.remove("mt-8","p-4","rounder-xl","border","border-green-500","border-red-500","bg-green-900","bg-red-900","text-green-400","text-red-400");
-    });
+    const submitButton = document.getElementById("submit") as HTMLButtonElement;
+    const clearFormButton = document.getElementById("resetButton") as HTMLButtonElement;
+    const statusElement = document.getElementById("contact-form-status") as HTMLElement;
+    const contactForm = document.getElementById("contact-form") as HTMLFormElement;
+    const formName = document.getElementById('name') as HTMLInputElement;
+    const formEmail = document.getElementById('email') as HTMLInputElement;
+    const formMessage = document.getElementById('message') as HTMLTextAreaElement;
+
+    if (clearFormButton) {
+        clearFormButton.addEventListener('click', event => {
+            if (statusElement) {
+                statusElement.innerText = "";
+            }
+        });
+    };
     
     // Add EventListener to trigger when submitting form
-    const contactForm = document.getElementById("contact-form");
-    contactForm.addEventListener('submit', event => {
-        event.preventDefault();
-        document.getElementById("submit").disabled = true;
-        submitForm();
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', event => {
+            event.preventDefault();
+            submitButton.disabled = true;
+            submitForm();
+        });
+    }
 
     async function submitForm() {
         const targetAPI = '/api/email';
         
         var formData = new URLSearchParams();
-        formData.append('name', document.getElementById('name').value || "From Website");
-        formData.append('email', document.getElementById('email').value || "unknown@user.com");
-        formData.append('message', document.getElementById('message').value || "No message");
+        if (formName && formEmail && formMessage) {
+            formData.append('name', formName.value || "From Website");
+            formData.append('email', formEmail.value || "unknown@user.com");
+            formData.append('message', formMessage.value || "No message");
+        }
 
         try {
             const response = await fetch(targetAPI, {
@@ -60,17 +73,25 @@
             });
 
             if (response.status === 200) {
-                document.getElementById("contact-form-status").innerText = await response.text();
-                document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-green-500","bg-green-900","text-green-400");
+                if (statusElement) {
+                    statusElement.innerText = await response.text();
+                    statusElement.classList.add("mt-8","p-4","rounded-xl","border","border-green-500","bg-green-900","text-green-400");
+                }
             } else {
-                document.getElementById("contact-form-status").innerText = await response.text();
-                document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
+                if (statusElement) {
+                    statusElement.innerText = await response.text();
+                    statusElement.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
+                }
             }
         } catch (error) {
-            document.getElementById("contact-form-status").innerText = "An error occurred sending message. Please try later.";
-            document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
+            if (statusElement) {
+                statusElement.innerText = "An error occurred sending message. Please try later.";
+                statusElement.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
+            }
         } finally {
-            document.getElementById("submit").disabled = false;
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
         }
     }
 </script>
