@@ -4,10 +4,11 @@
   "description": "",
   "scripts": {
     "start": "func start",
-    "swa": "swa start ../public --api-location ."
+    "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.6.0",
+    "@azure/functions": "^4.0.0",
     "@sendgrid/mail": "^8.1.4"
-  }
+  },
+  "main": "src/{index.js,functions/*.js}"
 }
