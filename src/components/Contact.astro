@@ -59,7 +59,7 @@
                 body: formData.toString()
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 document.getElementById("contact-form-status").innerText = "Message sent successfully!";
                 document.getElementById("contact-form-status")?.classList.add("mt-8","p-4","rounded-xl","border","border-green-500","bg-green-900","text-green-400");
             } else {
