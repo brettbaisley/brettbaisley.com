@@ -5,5 +5,8 @@ export default defineConfig({
     site: 'https://brettbaisley.com',
     vite: {
         plugins: [ tailwindcss() ]
+    },
+    experimental: {
+        svg: true,
     }
 });
