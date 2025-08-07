@@ -1,35 +1,69 @@
 const { app } = require('@azure/functions');
-const sgMail = require('@sendgrid/mail');
+const { EmailClient, KnownEmailSendStatus } = require("@azure/communication-email");
+
 
 
 app.http('email', {
     methods: ['POST'],
     authLevel: 'function',
     handler: async (request, context) => {
-        context.log(`Received HTTP function request for url "${request.url}"`);
-        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-        // Extract form data
-        const formData = new URLSearchParams(await request.text());
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-
-        // Construct email message
-        var msg = {
-            to: 'web@baisley.dev',
-            from: 'web@baisley.dev', // Use the email address or domain you verified above
-            subject: 'Message From brettbaisley.com',
-            text: `From ${name} [${email}]\n\n------------\n\n${message}`,
-            html: `From <strong>${name}</strong> [${email}]</p><hr /><p>${message}</p>`,
-        };
-        
+        const POLLER_WAIT_TIME = 10
         try {
-            await sgMail.send(msg);
-            return { status: 200, body: 'Your message has sent successfully.' }; 
-        } catch (error) {
-            context.log(`Error sending email: ${error}`);
-            return { status: 500, body: 'There was an issue sending message. Please try again later.' };
+            context.log(`Received HTTP function request for url "${request.url}"`);
+            emailClient = new EmailClient(process.env.COMMUNICATION_SERVICES_CONNECTION_STRING);
+
+            // Extract form data
+            const formData = new URLSearchParams(await request.text());
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            // Construct email message
+            var msg = {
+                senderAddress: "DoNotReply@brettbaisley.com",
+                content: {
+                    subject: "Message From brettbaisley.com",
+                    plainText: `From ${name} [${email}]\n\n------------\n\n${message}`,
+                    html: `From <strong>${name}</strong> [${email}]</p><hr /><p>${message}</p>`,
+                },
+                recipients: {
+                    to: [
+                        {
+                            address: "web@baisley.dev",
+                            displayName: "Brett Baisley"
+                        },
+                    ],
+                },
+            };
+
+            const poller = await emailClient.beginSend(msg);
+
+            if (!poller.getOperationState().isStarted) {
+                throw "Poller was not started"
+            }
+
+            let timeElapsed = 0;
+            while(!poller.isDone()) {
+                poller.poll();
+                context.log("Email send polling in progress...");
+
+                await new Promise( resolve => setTimeout(resolve, POLLER_WAIT_TIME * 1000));
+                timeElapsed += POLLER_WAIT_TIME;
+
+                if ( timeElapsed > 18 * POLLER_WAIT_TIME ) {
+                    throw "Polling timed out."
+                }
+            }
+
+            if(poller.getResult().status === KnownEmailSendStatus.Succeeded) {
+                context.log(`Email sent successfully: ${poller.getResult().id}`);
+            }
+            else {
+                throw poller.getResult().error;
+            }
         }
+        catch (error) {
+            context.log(`Error processing email request: ${error}`);
+        } 
     }
 });
