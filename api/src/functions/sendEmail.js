@@ -36,18 +36,12 @@ app.http('sendEmail', {
                 }
             };
 
-            context.log("message is", message);
-
             const poller = await emailClient.beginSend(message);
-            context.log("poller started, waiting for result...");
-
             const result = await poller.pollUntilDone();
-            context.log(`Email sent successfully with message ID: ${result.id}`);
-
-            context.res = { status: 200, body: { messageId: result.id } };
+            context.res = { status: 200, body: "Your message has sent successfully." };
         } catch (err) {
             context.error("Error sending email:", err);
-            context.res = { status: 500, body: "Failed to send email" };
+            context.res = { status: 500, body: "There was an issue sending message. Please try again later." };
         }
     }
 });
