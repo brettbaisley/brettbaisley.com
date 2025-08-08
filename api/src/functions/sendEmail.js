@@ -14,32 +14,25 @@ app.http('sendEmail', {
             context.log("Could not parse request body as form data, using query parameters only");
         }
 
-        const to = (formData && formData.get("to")) || request.query.get("to");
-        const subject = (formData && formData.get("subject")) || request.query.get("subject");
-        const body = (formData && formData.get("body")) || request.query.get("body");
+        const msg_name = (formData && formData.get("name")) || request.query.get("name");
+        const msg_email = (formData && formData.get("email")) || request.query.get("email");
+        const msg_message = (formData && formData.get("message")) || request.query.get("message");
 
-        context.log(`Received request to send email to: ${to}, subject: ${subject}`);
-
-
-        if (!to || !subject || !body) {
+        if (!msg_email || !msg_name || !msg_message) {
             context.res = { status: 400, body: "Missing parameters" };
             return;
         }
 
         try {
-            context.log("Initializing EmailClient");
             const emailClient = new EmailClient(process.env.AZURE_EMAIL_CONNECTION_STRING);
-
-            context.log("EmailClient initialized");
-
             const message = {
-                senderAddress: process.env.AZURE_EMAIL_SENDER, // e.g. "DoNotReply@xxxx.azurecomm.net"
+                senderAddress: process.env.AZURE_EMAIL_SENDER,
                 content: {
-                    subject,
-                    plainText: body
+                    subject: "Message from brettbaisley.com Contact Form",
+                    plainText: `From Name: ${msg_name}\nFrom Email: ${msg_email}\nMessage:\n${msg_message}`
                 },
                 recipients: {
-                    to: [{ address: to }]
+                    to: [{ address: process.env.AZURE_EMAIL_TO }]
                 }
             };
 
