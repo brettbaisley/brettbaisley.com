@@ -1,0 +1,9 @@
+{
+  "configurations": {
+    "brettbaisley.com": {
+      "appLocation": ".",
+      "apiLocation": "api",
+      "outputLocation": "dist"
+    }
+  }
+}
