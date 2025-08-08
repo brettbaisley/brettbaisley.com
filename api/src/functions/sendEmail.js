@@ -6,12 +6,6 @@ app.http('sendEmail', {
     methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
-        // context.log(`Http function processed request for url "${request.url}"`);
-
-        // const name = request.query.get('name') || await request.text() || 'world';
-
-        // return { body: `Hello, ${name}!` };
-
         // Try to get parameters from form data first, then fall back to query parameters
         let formData = null;
         try {
