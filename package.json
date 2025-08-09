@@ -1,25 +1,16 @@
 {
-  "name": "brettbaisley-come",
+  "name": "retrograde-rotation",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
+    "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.10.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "devDependencies": {
-    "@azure/static-web-apps-cli": "^2.0.6",
-    "@playwright/test": "^1.53.1",
-    "@tailwindcss/cli": "^4.1.10",
-    "@tailwindcss/vite": "^4.1.10",
-    "tailwindcss": "^4.1.10"
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.9",
+    "tailwindcss": "^4.1.11"
   }
 }

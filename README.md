@@ -1,33 +1,43 @@
-# brettbaisley.com
-This is the repo to my personal website, brettbaisley.com. There is nothing too fancy here, just a static website.
-
-
-## Clone Github Repo
-To start a new repo on your desktop, run these steps:
-
-1. Open Terminal
-2. Run the following commands:
-```sh
-cd $HOME/code/websites
-git clone https://github.com/brettbaisley/brettbaisley.com.git
-```
-
-
-## Ensure Azure Static Web Apps CLI is Installed Globally
-Run the following command, if you don't already have Azure 
+# Astro Starter Kit: Minimal
 
 ```sh
-cd $HOME/code/websites/brettbaisley.com
-npm install -g @azure/static-web-apps-cli
+npm create astro@latest -- --template minimal
 ```
 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Launch SWA for local development
-For local development, all environment variables (or Application Settings as Azure tends to call them), for Azure functions are stored in a `local.settings.json` file in the `api` folder. As this contains secrets, it should be added to `.gitignore` so you don't accidentially check this file in.
+## 🚀 Project Structure
 
-See https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file for more details on the `local.settings.json` file.
+Inside of your Astro project, you'll see the following folders and files:
 
-```sh
-cd $HOME/code/websites/brettbaisley.com/api
-swa start ../public --api-location .
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
