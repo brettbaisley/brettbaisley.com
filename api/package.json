@@ -1,17 +1,17 @@
 {
-  "name": "SendEmail",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/functions/*.js",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "@azure/communication-email": "^1.0.0",
     "@azure/functions": "^4.0.0"
   },
+  "main": "src/{index.js,functions/*.js}",
   "devDependencies": {
-    "@azure/communication-email": "^1.0.0",
-    "azure-functions-core-tools": "^4.x"
+    "dotenv": "^17.2.1"
   }
 }
