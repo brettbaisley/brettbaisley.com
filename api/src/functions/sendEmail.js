@@ -32,7 +32,7 @@ app.http('sendemail', {
                 senderAddress: process.env.AZURE_EMAIL_SENDER,
                 content: {
                     subject: "Message from brettbaisley.com Contact Form",
-                    plainText: `From Name: ${msg_name}\nFrom Email: ${msg_email}\nMessage:\n${msg_message}`
+                    plainText: `Name: ${msg_name}\nEmail: ${msg_email}\nMessage:\n${msg_message}`
                 },
                 recipients: {
                     to: [{ address: process.env.AZURE_EMAIL_TO }]

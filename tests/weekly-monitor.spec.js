@@ -2,17 +2,13 @@
 import { test, expect } from '@playwright/test';
 
 test('Page Has Title', async ({ page }) => {
-    // Load the page
     await page.goto('https://brettbaisley.com');
-    
-    // Expect a title to contact a specific string
     await expect(page).toHaveTitle('Brett Baisley');
     console.log('✅ Page has correct title.');
 });
 
 
 test('Contact form submission works correctly', async ({ page }) => {
-    // Load the page
     await page.goto('https://brettbaisley.com');
 
     // Wait for the contact form to be visible, then fill in
