@@ -1,6 +1,7 @@
 const { app } = require('@azure/functions');
 const { EmailClient } = require("@azure/communication-email");
 
+const EMAIL_SEND_MIN_TIME_SECONDS = 5;
 
 app.http('sendemail', {
     methods: ['POST'],
@@ -18,8 +19,20 @@ app.http('sendemail', {
         const msg_name = (formData && formData.get("name")) || request.query.get("name");
         const msg_email = (formData && formData.get("email")) || request.query.get("email");
         const msg_message = (formData && formData.get("message")) || request.query.get("message");
+        const honeypot = (formData && formData.get("website")) || request.query.get("website");
+        const form_start = parseInt(formData && formData.get("formStart"), 10) || parseInt(request.query.get("formStart"), 10);
+        const current_time = Date.now();
 
-        context.log(`Received message from ${msg_name} <${msg_email}>: ${msg_message}`);
+        if (current_time - form_start < EMAIL_SEND_MIN_TIME_SECONDS * 1000) {
+            context.res = { status: 400, body: "We did not send message due to possible spam detected." };
+            return context.res;
+        }
+
+        if (honeypot) {
+            context.log("Honeypot field detected, ignoring request as possible spam.");
+            context.res = { status: 400, body: "We did not send message due to possible spam detected." };
+            return context.res
+        }
 
         if (!msg_email || !msg_name || !msg_message) {
             context.res =  { status: 400, body: "Missing parameters" };
@@ -41,9 +54,6 @@ app.http('sendemail', {
 
             const poller = await emailClient.beginSend(message);
             const result = await poller.pollUntilDone();
-
-            // Print the result object and all its data as a string
-            context.log("Email send result:", JSON.stringify(result, null, 2));
 
             context.res = { status: 200, body: "Your message has sent successfully." };
             return context.res;

@@ -13,7 +13,10 @@
         
         <label for="message" class="mt-8">Message *</label>
         <textarea name="message" id="message" cols="30" rows="6" required class="p-4 rounded border-solid border-1 border-gray-700 bg-gray-800"></textarea>
-        
+
+        <input type="text" name="website" style="display: none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="formStart" value="${Date.now()}" /> 
+
         <p id="contact-form-status" class=""></p>
 
         <!-- Tailwindcss V4 beta doesn't have SafeList, so this was to get the styling added to the CSS file -->
