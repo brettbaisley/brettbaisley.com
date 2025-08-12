@@ -19,11 +19,17 @@
 
         <p id="contact-form-status" class=""></p>
 
+        <!-- Loading indicator -->
+        <div id="loading-indicator" class="hidden mt-4 flex items-center">
+            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500 mr-2"></div>
+            <span class="text-blue-400">Sending message...</span>
+        </div>
+
         <!-- Tailwindcss V4 beta doesn't have SafeList, so this was to get the styling added to the CSS file -->
-        <p hidden class="mt-8 p-4 rounded-xl border border-green-500 border-red-500 bg-green-900 bg-red-900 text-green-400 text-red-400"></p>
+        <p hidden class="mt-8 p-4 rounded-xl border border-green-500 border-red-500 bg-green-900 bg-red-900 text-green-400 text-red-400 animate-spin"></p>
 
         <div>
-            <button id="submit" class="mt-8 p-4 rounded bg-blue-500 cursor-pointer" type="submit">Send Message</button>
+            <button id="submit" class="mt-8 p-4 rounded bg-blue-500 hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed cursor-pointer transition-colors" type="submit">Send Message</button>
             <button id="resetButton" class="mt-8 p-4 rounded border border-blue-500 cursor-pointer" type="reset">Clear</button>
         </div>
     </div>
@@ -34,6 +40,7 @@
     const submitButton = document.getElementById("submit") as HTMLButtonElement;
     const clearFormButton = document.getElementById("resetButton") as HTMLButtonElement;
     const statusElement = document.getElementById("contact-form-status") as HTMLElement;
+    const loadingIndicator = document.getElementById("loading-indicator") as HTMLElement;
     const contactForm = document.getElementById("contact-form") as HTMLFormElement;
     const formName = document.getElementById('name') as HTMLInputElement;
     const formEmail = document.getElementById('email') as HTMLInputElement;
@@ -43,6 +50,10 @@
         clearFormButton.addEventListener('click', event => {
             if (statusElement) {
                 statusElement.innerText = "";
+                statusElement.className = "";
+            }
+            if (loadingIndicator) {
+                loadingIndicator.classList.add("hidden");
             }
         });
     };
@@ -52,6 +63,17 @@
         contactForm.addEventListener('submit', event => {
             event.preventDefault();
             submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+            
+            // Clear previous status and show loading indicator
+            if (statusElement) {
+                statusElement.innerText = "";
+                statusElement.className = "";
+            }
+            if (loadingIndicator) {
+                loadingIndicator.classList.remove("hidden");
+            }
+            
             submitForm();
         });
     }
@@ -92,8 +114,13 @@
                 statusElement.classList.add("mt-8","p-4","rounded-xl","border","border-red-500","bg-red-900","text-red-400");
             }
         } finally {
+            // Hide loading indicator and restore button
+            if (loadingIndicator) {
+                loadingIndicator.classList.add("hidden");
+            }
             if (submitButton) {
                 submitButton.disabled = false;
+                submitButton.textContent = "Send Message";
             }
         }
     }
