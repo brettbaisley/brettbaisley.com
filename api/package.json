@@ -13,5 +13,8 @@
   "main": "src/{index.js,functions/*.js}",
   "devDependencies": {
     "dotenv": "^17.2.1"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }

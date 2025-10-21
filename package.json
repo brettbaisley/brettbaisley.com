@@ -14,5 +14,8 @@
     "astro": "^5.12.9",
     "playwright": "^1.54.2",
     "tailwindcss": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }
